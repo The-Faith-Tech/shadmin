@@ -1,7 +1,4 @@
 library shadmin;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/shared/shared.dart';
+export 'src/widgets/widgets.dart';
