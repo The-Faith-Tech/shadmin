@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../shadmin.dart';
 
 class SHHeader extends StatelessWidget {
   const SHHeader(
@@ -27,12 +30,20 @@ class SHHeader extends StatelessWidget {
               icon: const Icon(Icons.menu),
             ),
         // Logo
+        khsMedium,
         GestureDetector(
           onTap: onLogoPressed,
           child: logo,
         ),
         // Search
+        Expanded(child: search ?? const SizedBox()),
         // Actions
+        ...actions.map(
+          (e) => Padding(
+            padding: EdgeInsets.symmetric(horizontal: ks1.w),
+            child: e,
+          ),
+        ),
       ],
     );
   }
