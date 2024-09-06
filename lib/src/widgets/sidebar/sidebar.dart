@@ -6,12 +6,14 @@ import 'sidebarItem.dart';
 import 'sidebarTile.dart';
 
 class SHSideBar extends StatelessWidget {
-  const SHSideBar({super.key, required this.items});
+  const SHSideBar({super.key, required this.items, this.isCollapsed = false});
   final List<SHSiderBarItem> items;
+  final bool isCollapsed;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.18,
+      width: isCollapsed ? ks20.w : MediaQuery.of(context).size.width * 0.18,
       height: double.infinity,
       padding: EdgeInsets.all(ks3.w),
       decoration: BoxDecoration(
@@ -22,6 +24,7 @@ class SHSideBar extends StatelessWidget {
         itemBuilder: (context, index) => SHSiderbarTile(
           item: items[index],
           isFirst: index == 0,
+          iconOnly: isCollapsed,
         ),
       ),
     );

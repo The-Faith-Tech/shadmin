@@ -1,7 +1,9 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadmin_ui/views/homeView.dart';
+import 'package:get/get.dart';
+
+import 'routes/appPages.dart';
 
 void main() {
   runApp(
@@ -23,23 +25,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late bool darkMode;
-  @override
-  void initState() {
-    darkMode = false;
-    super.initState();
-  }
-
-  _changeTheme() {
-    setState(() {
-      darkMode = !darkMode;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(1920, 1080));
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Shadmin',
       theme: ThemeData.light(
         useMaterial3: true,
@@ -47,11 +36,10 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(
         useMaterial3: true,
       ),
-      themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
-      home: HomeView(
-        onThemeChange: _changeTheme,
-        isDarkMode: darkMode,
-      ),
+      themeMode: ThemeMode.light,
+      initialRoute: Routes.HOME,
+      getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

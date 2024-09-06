@@ -4,31 +4,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../shadmin.dart';
 
 class SHHeader extends StatelessWidget {
-  const SHHeader(
-      {super.key,
-      required this.onMenuIconPressed,
-      required this.onLogoPressed,
-      this.actions = const [],
-      required this.logo,
-      this.search,
-      this.menuIcon});
-  final VoidCallback onMenuIconPressed;
+  const SHHeader({
+    super.key,
+    required this.onLogoPressed,
+    this.actions = const [],
+    required this.menu,
+    required this.logo,
+    this.search,
+    this.isMenuColapsed = false,
+  });
+
   final VoidCallback onLogoPressed;
   final List<Widget> actions;
   final Widget logo;
+  final Widget menu;
   final Widget? search;
-  final Widget? menuIcon;
+
+  final bool isMenuColapsed;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         // Menu Icon
-        menuIcon ??
-            IconButton(
-              onPressed: onMenuIconPressed,
-              icon: const Icon(Icons.menu),
-            ),
+        menu,
         // Logo
         khsMedium,
         GestureDetector(
