@@ -87,6 +87,18 @@ class HomeView extends StatelessWidget {
                           SHSideBarMenuItem(
                             title: "E commerce",
                           ),
+                          SHSideBarMenuItem(
+                            title: "LMS",
+                          ),
+                          SHSideBarMenuItem(
+                            title: "Management",
+                          ),
+                          SHSideBarMenuItem(
+                            title: "SaaS",
+                          ),
+                          SHSideBarMenuItem(
+                            title: "Support Desk",
+                          ),
                         ],
                       ),
                       SHSiderBarItem(
@@ -105,35 +117,41 @@ class HomeView extends StatelessWidget {
                             icon: Icons.email,
                           ),
                           SHSideBarMenuItem(
-                            title: "Multilevel",
-                            icon: Icons.now_widgets,
-                            children: [
-                              SHSideBarMenuItem(
-                                title: "Level 1",
-                              ),
-                              SHSideBarMenuItem(
-                                title: "Level 2",
-                                children: [
-                                  SHSideBarMenuItem(
-                                    title: "Level 2.1",
-                                  ),
-                                  SHSideBarMenuItem(
-                                    title: "Level 2.2",
-                                  ),
-                                ],
-                              ),
-                            ]
-                          ),
+                              title: "Multilevel",
+                              icon: Icons.now_widgets,
+                              children: [
+                                SHSideBarMenuItem(
+                                  title: "Level 1",
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "Level 2",
+                                  children: [
+                                    SHSideBarMenuItem(
+                                      title: "Level 2.1",
+                                    ),
+                                    SHSideBarMenuItem(
+                                      title: "Level 2.2",
+                                    ),
+                                  ],
+                                ),
+                              ]),
                         ],
                       ),
                     ],
                   ),
+                  khsMedium,
                   // Content
-                  const Expanded(
+                  Expanded(
                     child: Column(
                       children: [
                         // Content
+                        Expanded(
+                          child: Container(
+                            child: Text("data"),
+                          ),
+                        ),
                         // Footer
+                        const SHFooter(),
                       ],
                     ),
                   )

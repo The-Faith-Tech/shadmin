@@ -5,6 +5,14 @@ class SHFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+              "Thank you for creating with FaithTech | ${DateTime.now().year} Shadmin"),
+        ),
+        const Text("v3.1.5")
+      ],
+    );
   }
 }

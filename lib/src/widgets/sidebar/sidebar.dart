@@ -11,7 +11,7 @@ class SHSideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.2,
+      width: MediaQuery.of(context).size.width * 0.18,
       height: double.infinity,
       padding: EdgeInsets.all(ks3.w),
       decoration: BoxDecoration(
