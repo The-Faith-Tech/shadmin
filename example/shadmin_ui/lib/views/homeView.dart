@@ -83,6 +83,9 @@ class HomeView extends StatelessWidget {
                     () => SHSideBar(
                       isCollapsed:
                           Get.find<NavController>().isMenuColapsed.value,
+                      onHover: () {
+                        Get.find<NavController>().toggleMenu();
+                      },
                       items: [
                         SHSiderBarItem(
                           title: "Dashboard",

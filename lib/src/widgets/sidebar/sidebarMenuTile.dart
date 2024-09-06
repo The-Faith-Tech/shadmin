@@ -5,11 +5,17 @@ import '../../shared/shared.dart';
 import 'sidebarItem.dart';
 
 class SHSiderbarMenuTile extends StatefulWidget {
-  const SHSiderbarMenuTile(
-      {super.key, required this.item, this.level = 1, this.onTap});
+  const SHSiderbarMenuTile({
+    super.key,
+    required this.item,
+    this.level = 1,
+    this.onTap,
+    this.iconOnly = false,
+  });
   final SHSideBarMenuItem item;
   final int level;
   final VoidCallback? onTap;
+  final bool iconOnly;
 
   @override
   State<SHSiderbarMenuTile> createState() => _SHSiderbarMenuTileState();
@@ -51,15 +57,17 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                   SizedBox(width: ks6.w),
                 ],
                 khsSmall,
-                Expanded(
-                  child: Text(widget.item.title),
-                ),
-                if (widget.item.children.isNotEmpty) ...[
-                  khsTiny,
-                  Icon(collapsed
-                      ? Icons.keyboard_arrow_down
-                      : Icons.keyboard_arrow_up)
-                ]
+                if (!widget.iconOnly) ...[
+                  Expanded(
+                    child: Text(widget.item.title),
+                  ),
+                  if (widget.item.children.isNotEmpty) ...[
+                    khsTiny,
+                    Icon(collapsed
+                        ? Icons.keyboard_arrow_down
+                        : Icons.keyboard_arrow_up)
+                  ]
+                ],
               ],
             ),
           ),
@@ -69,6 +77,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
               (e) => SHSiderbarMenuTile(
                 item: e,
                 level: widget.level + 1,
+                iconOnly: widget.iconOnly,
               ),
             )
         ],
