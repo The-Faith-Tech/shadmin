@@ -48,6 +48,7 @@ class _SHSiderbarTileState extends State<SHSiderbarTile> {
             child: Row(
               children: [
                 if (widget.item.icon != null && widget.isFirst) ...[
+                  SizedBox(width: ks2.w),
                   Icon(
                     widget.item.icon,
                     size: ks6.w,
