@@ -38,50 +38,53 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-          left: widget.level * ks2.w, top: ks1.h, bottom: ks1.h),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          InkWell(
-            onTap: widget.item.children.isNotEmpty ? _toggle : widget.onTap,
-            child: Row(
+    return (widget.iconOnly && widget.item.icon == null)
+        ? const SizedBox.shrink()
+        : Padding(
+            padding: EdgeInsets.only(
+                left: widget.level * ks2.w, top: ks1.h, bottom: ks1.h),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                if (widget.item.icon != null) ...[
-                  Icon(
-                    widget.item.icon,
-                    size: ks6.w,
+                InkWell(
+                  onTap:
+                      widget.item.children.isNotEmpty ? _toggle : widget.onTap,
+                  child: Row(
+                    children: [
+                      if (widget.item.icon != null) ...[
+                        Icon(
+                          widget.item.icon,
+                          size: ks6.w,
+                        ),
+                      ] else ...[
+                        SizedBox(width: ks6.w),
+                      ],
+                      khsSmall,
+                      if (!widget.iconOnly) ...[
+                        Expanded(
+                          child: Text(widget.item.title),
+                        ),
+                        if (widget.item.children.isNotEmpty) ...[
+                          khsTiny,
+                          Icon(collapsed
+                              ? Icons.keyboard_arrow_down
+                              : Icons.keyboard_arrow_up)
+                        ]
+                      ],
+                    ],
                   ),
-                ] else ...[
-                  SizedBox(width: ks6.w),
-                ],
-                khsSmall,
-                if (!widget.iconOnly) ...[
-                  Expanded(
-                    child: Text(widget.item.title),
-                  ),
-                  if (widget.item.children.isNotEmpty) ...[
-                    khsTiny,
-                    Icon(collapsed
-                        ? Icons.keyboard_arrow_down
-                        : Icons.keyboard_arrow_up)
-                  ]
-                ],
+                ),
+                kvsTiny,
+                if (!collapsed)
+                  ...widget.item.children.map(
+                    (e) => SHSiderbarMenuTile(
+                      item: e,
+                      level: widget.level + 1,
+                      iconOnly: widget.iconOnly,
+                    ),
+                  )
               ],
             ),
-          ),
-          kvsTiny,
-          if (!collapsed)
-            ...widget.item.children.map(
-              (e) => SHSiderbarMenuTile(
-                item: e,
-                level: widget.level + 1,
-                iconOnly: widget.iconOnly,
-              ),
-            )
-        ],
-      ),
-    );
+          );
   }
 }

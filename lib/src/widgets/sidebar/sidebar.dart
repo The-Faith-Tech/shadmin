@@ -24,7 +24,7 @@ class SHSideBar extends StatelessWidget {
         onHover?.call();
       },
       child: Container(
-        width: isCollapsed ? ks20.w : MediaQuery.of(context).size.width * 0.18,
+        width: isCollapsed ? ks18.w : MediaQuery.of(context).size.width * 0.18,
         height: double.infinity,
         padding: EdgeInsets.all(ks3.w),
         decoration: BoxDecoration(

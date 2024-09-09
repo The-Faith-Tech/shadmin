@@ -73,6 +73,9 @@ class _SHSiderbarTileState extends State<SHSiderbarTile> {
                           : Icons.keyboard_arrow_up,
                     )
                   ]
+                ] else ...[
+                  if (widget.item.icon == null)
+                    const Expanded(child: Divider()),
                 ],
               ],
             ),
