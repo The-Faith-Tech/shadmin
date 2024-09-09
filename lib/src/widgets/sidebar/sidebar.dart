@@ -7,8 +7,13 @@ import 'sidebarTile.dart';
 
 class SHSideBar extends StatelessWidget {
   const SHSideBar(
-      {super.key, required this.items, this.isCollapsed = false, this.onHover});
+      {super.key,
+      required this.items,
+      this.iconOnly = false,
+      this.onHover,
+      this.isCollapsed = false});
   final List<SHSiderBarItem> items;
+  final bool iconOnly;
   final bool isCollapsed;
   final VoidCallback? onHover;
 
@@ -16,15 +21,15 @@ class SHSideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return MouseRegion(
       onHover: (event) {
-        if (!isCollapsed) return;
+        if (!iconOnly) return;
         onHover?.call();
       },
       onExit: (event) {
-        if (isCollapsed) return;
+        if (!isCollapsed) return;
         onHover?.call();
       },
       child: Container(
-        width: isCollapsed ? ks18.w : MediaQuery.of(context).size.width * 0.18,
+        width: iconOnly ? ks18.w : MediaQuery.of(context).size.width * 0.18,
         height: double.infinity,
         padding: EdgeInsets.all(ks3.w),
         decoration: BoxDecoration(
@@ -35,7 +40,7 @@ class SHSideBar extends StatelessWidget {
           itemBuilder: (context, index) => SHSiderbarTile(
             item: items[index],
             isFirst: index == 0,
-            iconOnly: isCollapsed,
+            iconOnly: iconOnly,
             onHover: onHover,
           ),
         ),

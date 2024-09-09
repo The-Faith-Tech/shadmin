@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 class NavController extends GetxController {
   final isMenuColapsed = false.obs;
+  final isIconOnly = false.obs;
 
   @override
   void onInit() {
@@ -10,5 +11,10 @@ class NavController extends GetxController {
 
   toggleMenu() {
     isMenuColapsed(!isMenuColapsed.value);
+    isIconOnly(isMenuColapsed.value);
+  }
+
+  toggleIconOnly() {
+    isIconOnly(!isIconOnly.value);
   }
 }

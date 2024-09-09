@@ -81,10 +81,11 @@ class HomeView extends StatelessWidget {
                   // Sidebar
                   Obx(
                     () => SHSideBar(
+                      iconOnly: Get.find<NavController>().isIconOnly.value,
                       isCollapsed:
                           Get.find<NavController>().isMenuColapsed.value,
                       onHover: () {
-                        Get.find<NavController>().toggleMenu();
+                        Get.find<NavController>().toggleIconOnly();
                       },
                       items: [
                         SHSiderBarItem(
