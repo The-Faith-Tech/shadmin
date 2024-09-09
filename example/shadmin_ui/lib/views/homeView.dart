@@ -15,7 +15,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: ks14, vertical: ks6),
+        padding: EdgeInsets.symmetric(horizontal: ks12.w, vertical: ks6.h),
         child: Column(
           children: [
             // Header
@@ -74,7 +74,7 @@ class HomeView extends StatelessWidget {
                 )
               ],
             ),
-            kvsTiny,
+            kvsMedium,
             Expanded(
               child: Row(
                 children: [
@@ -93,65 +93,95 @@ class HomeView extends StatelessWidget {
                           icon: Icons.dashboard,
                           items: [
                             SHSideBarMenuItem(
-                              title: "Default",
-                            ),
+                                title: "Analytics",
+                                onClick: () {
+                                  log("Anakytics");
+                                }),
                             SHSideBarMenuItem(
-                              title: "Analytics",
-                            ),
-                            SHSideBarMenuItem(
-                              title: "CRM",
-                            ),
-                            SHSideBarMenuItem(
-                              title: "E commerce",
-                            ),
-                            SHSideBarMenuItem(
-                              title: "LMS",
-                            ),
-                            SHSideBarMenuItem(
-                              title: "Management",
-                            ),
-                            SHSideBarMenuItem(
-                              title: "SaaS",
-                            ),
-                            SHSideBarMenuItem(
-                              title: "Support Desk",
-                            ),
+                                title: "Support Desk",
+                                onClick: () {
+                                  log("Support Desk");
+                                }),
                           ],
                         ),
                         SHSiderBarItem(
                           title: "App",
                           items: [
                             SHSideBarMenuItem(
-                              title: "Calender",
-                              icon: Icons.calendar_month_rounded,
+                              title: "Authentication",
+                              icon: Icons.security,
+                              onClick: () => log("Authentication"),
                             ),
                             SHSideBarMenuItem(
-                              title: "Chat",
-                              icon: Icons.chat,
+                              title: "CRUD",
+                              icon: Icons.now_widgets,
+                              children: [
+                                SHSideBarMenuItem(
+                                  title: "CREATE",
+                                  onClick: () {
+                                    log("Create");
+                                  },
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "GET",
+                                  children: [
+                                    SHSideBarMenuItem(
+                                      title: "ALL",
+                                      onClick: () {
+                                        log("All");
+                                      },
+                                    ),
+                                    SHSideBarMenuItem(
+                                      title: "SINGLE",
+                                      onClick: () {
+                                        log("Single");
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "UPDATE",
+                                  onClick: () {
+                                    log("Update");
+                                  },
+                                ),
+                              ],
                             ),
+                          ],
+                        ),
+                        SHSiderBarItem(
+                          title: "Components",
+                          items: [
                             SHSideBarMenuItem(
-                              title: "Email",
-                              icon: Icons.email,
+                              title: "Button",
+                              icon: Icons.ads_click,
+                              children: [
+                                SHSideBarMenuItem(
+                                  title: "Primary",
+                                  onClick: () {
+                                    log("Primary");
+                                  },
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "Icon",
+                                  onClick: () {
+                                    log("Icon Button");
+                                  },
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "Text",
+                                  onClick: () {
+                                    log("Text Button");
+                                  },
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "Segmented",
+                                  onClick: () {
+                                    log("Segmented Button");
+                                  },
+                                ),
+                              ],
                             ),
-                            SHSideBarMenuItem(
-                                title: "Multilevel",
-                                icon: Icons.now_widgets,
-                                children: [
-                                  SHSideBarMenuItem(
-                                    title: "Level 1",
-                                  ),
-                                  SHSideBarMenuItem(
-                                    title: "Level 2",
-                                    children: [
-                                      SHSideBarMenuItem(
-                                        title: "Level 2.1",
-                                      ),
-                                      SHSideBarMenuItem(
-                                        title: "Level 2.2",
-                                      ),
-                                    ],
-                                  ),
-                                ]),
                           ],
                         ),
                       ],

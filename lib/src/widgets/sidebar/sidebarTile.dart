@@ -87,6 +87,7 @@ class _SHSiderbarTileState extends State<SHSiderbarTile> {
                 (e) => SHSiderbarMenuTile(
                   item: e,
                   iconOnly: widget.iconOnly,
+                  onTap: e.onClick,
                 ),
               )
           ] else ...[
@@ -94,6 +95,7 @@ class _SHSiderbarTileState extends State<SHSiderbarTile> {
               (e) => SHSiderbarMenuTile(
                 item: e,
                 iconOnly: widget.iconOnly,
+                onTap: e.onClick,
               ),
             )
           ]

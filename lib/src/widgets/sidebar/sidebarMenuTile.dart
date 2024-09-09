@@ -81,6 +81,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                       item: e,
                       level: widget.level + 1,
                       iconOnly: widget.iconOnly,
+                      onTap: e.onClick,
                     ),
                   )
               ],
