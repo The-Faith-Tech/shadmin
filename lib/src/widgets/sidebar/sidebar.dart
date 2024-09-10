@@ -35,14 +35,22 @@ class SHSideBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.grey.shade100,
         ),
-        child: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (context, index) => SHSiderbarTile(
-            item: items[index],
-            isFirst: index == 0,
-            iconOnly: iconOnly,
-            onHover: onHover,
-          ),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: items.length,
+                itemBuilder: (context, index) => SHSiderbarTile(
+                  item: items[index],
+                  isFirst: index == 0,
+                  iconOnly: iconOnly,
+                  onHover: onHover,
+                ),
+              ),
+            ),
+            const Text("v1.0.0"),
+            kvsSmall,
+          ],
         ),
       ),
     );

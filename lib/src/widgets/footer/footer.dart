@@ -7,11 +7,8 @@ class SHFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: Text(
-              "Thank you for creating with FaithTech | ${DateTime.now().year} Shadmin"),
-        ),
-        const Text("v3.1.5")
+        Text(
+            "Thank you for creating with FaithTech | ${DateTime.now().year} Shadmin"),
       ],
     );
   }

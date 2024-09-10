@@ -195,7 +195,7 @@ class HomeView extends StatelessWidget {
                         // Content
                         Expanded(
                           child: Container(
-                            child: Text("data"),
+                            child: const Text("data"),
                           ),
                         ),
                         // Footer
@@ -206,6 +206,16 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             )
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        label: Row(
+          children: [
+            const Icon(Icons.settings),
+            khsTiny,
+            const Text("Customize")
           ],
         ),
       ),
