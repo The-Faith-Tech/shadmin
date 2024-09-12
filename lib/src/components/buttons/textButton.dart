@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../shared/shared.dart';
 import '../../utils/utils.dart';
-import '../../widgets/text.dart';
+import '../text.dart';
 
 abstract class _TextBtn {
   ButtonStyle txtBtnStyle(BuildContext context);
 }
 
-class LucTextBtn extends StatelessWidget implements _TextBtn {
-  const LucTextBtn({
+class SHTextBtn extends StatelessWidget implements _TextBtn {
+  const SHTextBtn({
     super.key,
     required this.label,
     required this.onPressed,

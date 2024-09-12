@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../shared/spacing.dart';
 import '../../utils/themeExtensions.dart';
-import '../text.dart';
+import '../../components/text.dart';
 
 class LucDivider extends StatelessWidget {
   const LucDivider({super.key, this.text, this.color, this.padding});

@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import '../../widgets/text.dart';
+import '../text.dart';
 
-class LucSegmentedBtn<T> extends StatelessWidget {
-  const LucSegmentedBtn({
+class SHSegmentedBtn<T> extends StatelessWidget {
+  const SHSegmentedBtn({
     super.key,
     required this.values,
     required this.selected,
