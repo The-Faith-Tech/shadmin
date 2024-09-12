@@ -4,3 +4,5 @@ export 'sidebar/sidebar.dart';
 export 'sidebar/sidebarItem.dart';
 export 'sidebar/sidebarTile.dart';
 export 'sidebar/sidebarMenuTile.dart';
+export 'text.dart';
+export 'divider/divider.dart';
