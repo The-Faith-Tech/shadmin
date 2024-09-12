@@ -13,8 +13,8 @@ abstract class _PrimaryBtn {
   Color? foreColor(BuildContext context);
 }
 
-class LucPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
-  const LucPrimaryBtn({
+class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
+  const SHPrimaryBtn({
     super.key,
     required this.text,
     required this.onPressed,
