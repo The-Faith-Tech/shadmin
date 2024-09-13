@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-import 'package:shadmin_ui/views/homeView.dart';
+import 'package:shadmin_ui/views/navView.dart';
 
-import '../bindings/homeBinding.dart';
+import '../bindings/navBinding.dart';
+import '../views/button/buttonsView.dart';
 
 part 'appRoutes.dart';
 
@@ -11,8 +12,12 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.HOME,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
+      page: () => const NavView(),
+      binding: NavBinding(),
+    ),
+    GetPage(
+      name: Routes.BUTTONS,
+      page: () => const SHButtonsView(),
     ),
   ];
 }

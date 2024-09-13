@@ -4,8 +4,8 @@ import '../../shared/spacing.dart';
 import '../../utils/themeExtensions.dart';
 import '../../components/text.dart';
 
-class LucDivider extends StatelessWidget {
-  const LucDivider({super.key, this.text, this.color, this.padding});
+class SHDivider extends StatelessWidget {
+  const SHDivider({super.key, this.text, this.color, this.padding});
   final String? text;
   final Color? color;
   final EdgeInsetsGeometry? padding;

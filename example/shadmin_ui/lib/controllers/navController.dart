@@ -4,6 +4,10 @@ class NavController extends GetxController {
   final isMenuColapsed = false.obs;
   final isIconOnly = false.obs;
 
+  final selectedIndex = 0.obs;
+
+  final dashNavKey = Get.nestedKey(0);
+
   @override
   void onInit() {
     super.onInit();

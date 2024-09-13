@@ -5,9 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/shared.dart';
 import '../../utils/utils.dart';
 
-class LucTextFF extends StatelessWidget {
-  const LucTextFF({
-    Key? key,
+class SHTextFF extends StatelessWidget {
+  const SHTextFF({
+    super.key,
     this.label,
     this.inputType,
     required this.controller,
@@ -30,7 +30,7 @@ class LucTextFF extends StatelessWidget {
     this.fillColor,
     this.hintTextColor,
     this.validator,
-  }) : super(key: key);
+  });
   final String? label;
   final TextInputType? inputType;
   final TextEditingController controller;
