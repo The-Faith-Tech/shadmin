@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shadmin_ui/views/auth/loginView.dart';
+import 'package:shadmin_ui/views/auth/registerView.dart';
 import 'package:shadmin_ui/views/homeView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
@@ -18,11 +20,20 @@ class AppRouter {
       route = "/$route";
     }
     switch (route) {
-      // Buttons View
       case Routes.HOME:
         return GetPageRoute(
           settings: settings,
           page: () => const HomeView(),
+        );
+      case Routes.LOGIN:
+        return GetPageRoute(
+          settings: settings,
+          page: () => const LoginView(),
+        );
+      case Routes.REGISTER:
+        return GetPageRoute(
+          settings: settings,
+          page: () => const RegisterView(),
         );
       case Routes.BUTTONS:
         return GetPageRoute(

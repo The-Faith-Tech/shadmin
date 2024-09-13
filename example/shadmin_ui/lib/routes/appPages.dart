@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:shadmin_ui/views/auth/loginView.dart';
+import 'package:shadmin_ui/views/auth/registerView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
 import '../bindings/navBinding.dart';
@@ -14,6 +16,14 @@ class AppPages {
       name: Routes.HOME,
       page: () => const NavView(),
       binding: NavBinding(),
+    ),
+    GetPage(
+      name: Routes.LOGIN,
+      page: () => const LoginView(),
+    ),
+    GetPage(
+      name: Routes.REGISTER,
+      page: () => const RegisterView(),
     ),
     GetPage(
       name: Routes.BUTTONS,

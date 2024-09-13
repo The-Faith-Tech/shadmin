@@ -97,14 +97,10 @@ class NavView extends StatelessWidget {
                           icon: Icons.dashboard,
                           items: [
                             SHSideBarMenuItem(
-                                title: "Analytics",
+                                title: "Default",
                                 onClick: () {
-                                  log("Anakytics");
-                                }),
-                            SHSideBarMenuItem(
-                                title: "Support Desk",
-                                onClick: () {
-                                  log("Support Desk");
+                                  log("Default");
+                                  Get.toNamed(Routes.HOME, id: getNavId());
                                 }),
                           ],
                         ),
@@ -114,7 +110,20 @@ class NavView extends StatelessWidget {
                             SHSideBarMenuItem(
                               title: "Authentication",
                               icon: Icons.security,
-                              onClick: () => log("Authentication"),
+                              children: [
+                                SHSideBarMenuItem(
+                                  title: "Login",
+                                  onClick: () {
+                                    Get.toNamed(Routes.LOGIN);
+                                  },
+                                ),
+                                SHSideBarMenuItem(
+                                  title: "Register",
+                                  onClick: () {
+                                    Get.toNamed(Routes.REGISTER);
+                                  },
+                                ),
+                              ],
                             ),
                             SHSideBarMenuItem(
                               title: "CRUD",

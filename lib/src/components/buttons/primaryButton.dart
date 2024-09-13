@@ -29,6 +29,7 @@ class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
     this.hasShadow = false,
     this.isLoading = false,
     this.icon,
+    this.child,
   });
   final String text;
   final VoidCallback onPressed;
@@ -43,12 +44,13 @@ class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
   final bool isDisabled;
   final bool isLoading;
   final IconData? icon;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       // width: double.infinity,
-      height: height ?? khs12,
+      height: height ?? khs14,
       margin: margin ?? EdgeInsets.zero,
       decoration: decoration(),
       child: ElevatedButton(
@@ -61,8 +63,8 @@ class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
           children: [
             if (isLoading && !isDisabled) ...[
               buildProgress(context),
-            ] else if (icon != null) ...[
-              buildIcon(context, icon!),
+            ] else if (icon != null || child != null) ...[
+              child ?? buildIcon(context, icon!),
               khsb1,
             ],
             Flexible(
@@ -81,8 +83,7 @@ class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
   ButtonStyle outlinedBtnStyle(BuildContext context) {
     return OutlinedButton.styleFrom(
       elevation: 0,
-      backgroundColor:
-          isDisabled ? Colors.grey.shade300 : color ?? Colors.white,
+      backgroundColor: isDisabled ? Colors.grey.shade300 : Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(radius ?? ks25.r),
         side: isDisabled
