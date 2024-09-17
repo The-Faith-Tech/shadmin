@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../components/text.dart';
 import '../../shared/shared.dart';
 import '../../utils/themeExtensions.dart';
 import 'sidebarItem.dart';
@@ -45,6 +46,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
   @override
   Widget build(BuildContext context) {
     var isSelected = widget.selectedRoute == widget.item.route;
+    var selectedColor = isSelected ? context.primaryColor : null;
     return (widget.iconOnly && widget.item.icon == null)
         ? const SizedBox.shrink()
         : Padding(
@@ -54,7 +56,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Material(
-                  color: isSelected
+                  color: (isSelected && !widget.iconOnly)
                       ? context.primaryColor.withOpacity(0.2)
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(kr15),
@@ -65,7 +67,15 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                             ? null
                             : widget.onTap,
                     borderRadius: BorderRadius.circular(kr15),
-                    child: Padding(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(kr15),
+                        color: Colors.transparent,
+                        border: (isSelected && !widget.iconOnly)
+                            ? Border.all(
+                                color: context.primaryColor.withOpacity(0.5))
+                            : null,
+                      ),
                       padding: widget.iconOnly
                           ? EdgeInsets.zero
                           : EdgeInsets.symmetric(
@@ -76,6 +86,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                             Icon(
                               widget.item.icon,
                               size: ks6.w,
+                              color: selectedColor,
                             ),
                           ] else ...[
                             SizedBox(width: ks6.w),
@@ -83,13 +94,20 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                           khsSmall,
                           if (!widget.iconOnly) ...[
                             Expanded(
-                              child: Text(widget.item.title),
+                              child: SHText(
+                                widget.item.title,
+                                color: selectedColor,
+                                isBold: isSelected,
+                              ),
                             ),
                             if (widget.item.children.isNotEmpty) ...[
                               khsTiny,
-                              Icon(collapsed
-                                  ? Icons.keyboard_arrow_down
-                                  : Icons.keyboard_arrow_up)
+                              Icon(
+                                collapsed
+                                    ? Icons.keyboard_arrow_down
+                                    : Icons.keyboard_arrow_up,
+                                color: selectedColor,
+                              )
                             ]
                           ],
                         ],
