@@ -7,18 +7,21 @@ import 'sidebarItem.dart';
 import 'sidebarTile.dart';
 
 class SHSideBar extends StatelessWidget {
-  const SHSideBar(
-      {super.key,
-      required this.items,
-      this.iconOnly = false,
-      this.onHover,
-      this.isCollapsed = false,
-      required this.version});
+  const SHSideBar({
+    super.key,
+    required this.items,
+    this.iconOnly = false,
+    this.onHover,
+    this.isCollapsed = false,
+    required this.version,
+    required this.getCurrentRoute,
+  });
   final List<SHSiderBarItem> items;
   final bool iconOnly;
   final bool isCollapsed;
   final VoidCallback? onHover;
   final String version;
+  final String Function() getCurrentRoute;
 
   @override
   Widget build(BuildContext context) {

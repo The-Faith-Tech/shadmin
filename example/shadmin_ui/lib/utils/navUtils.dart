@@ -24,20 +24,18 @@ Map<String, String?> pathParams(
   return params;
 }
 
-
-
 String? getNavTag({String? id}) {
   if (Get.isRegistered<NavController>()) {
     if (id != null) {
       if (Get.currentRoute != Routes.HOME) {
         return id;
       }
-      return "${Get.find<NavController>().selectedIndex.value}-$id";
+      return "${Get.find<NavController>().selectedRoute.value}-$id";
     }
     if (Get.currentRoute != Routes.HOME) {
       return id;
     }
-    return Get.find<NavController>().selectedIndex.value.toString();
+    return Get.find<NavController>().selectedRoute.value.toString();
   }
   return null;
 }
@@ -47,8 +45,7 @@ int? getNavId() {
     return null;
   }
   if (Get.isRegistered<NavController>()) {
-    return Get.find<NavController>().selectedIndex.value;
+    return 0;
   }
   return null;
 }
-

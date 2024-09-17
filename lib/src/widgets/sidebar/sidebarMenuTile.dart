@@ -38,12 +38,6 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
     });
   }
 
-  void _toggleHover(val) {
-    setState(() {
-      isHovering = val;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return (widget.iconOnly && widget.item.icon == null)
@@ -54,36 +48,40 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                InkWell(
-                  onTap:
-                      widget.item.children.isNotEmpty ? _toggle : widget.onTap,
-                  onHover: _toggleHover,
-                  child: Container(
-                    color:
-                        isHovering ? Colors.grey.shade300 : Colors.transparent,
-                    child: Row(
-                      children: [
-                        if (widget.item.icon != null) ...[
-                          Icon(
-                            widget.item.icon,
-                            size: ks6.w,
-                          ),
-                        ] else ...[
-                          SizedBox(width: ks6.w),
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: widget.item.children.isNotEmpty
+                        ? _toggle
+                        : widget.onTap,
+                    borderRadius: BorderRadius.circular(kr15),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: khs2, vertical: khs2),
+                      child: Row(
+                        children: [
+                          if (widget.item.icon != null) ...[
+                            Icon(
+                              widget.item.icon,
+                              size: ks6.w,
+                            ),
+                          ] else ...[
+                            SizedBox(width: ks6.w),
+                          ],
+                          khsSmall,
+                          if (!widget.iconOnly) ...[
+                            Expanded(
+                              child: Text(widget.item.title),
+                            ),
+                            if (widget.item.children.isNotEmpty) ...[
+                              khsTiny,
+                              Icon(collapsed
+                                  ? Icons.keyboard_arrow_down
+                                  : Icons.keyboard_arrow_up)
+                            ]
+                          ],
                         ],
-                        khsSmall,
-                        if (!widget.iconOnly) ...[
-                          Expanded(
-                            child: Text(widget.item.title),
-                          ),
-                          if (widget.item.children.isNotEmpty) ...[
-                            khsTiny,
-                            Icon(collapsed
-                                ? Icons.keyboard_arrow_down
-                                : Icons.keyboard_arrow_up)
-                          ]
-                        ],
-                      ],
+                      ),
                     ),
                   ),
                 ),

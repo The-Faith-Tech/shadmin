@@ -15,11 +15,14 @@ class Sidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => SHSideBar(
-        version: Get.currentRoute,
+        version: "v1.0.0",
         iconOnly: Get.find<NavController>().isIconOnly.value,
         isCollapsed: Get.find<NavController>().isMenuColapsed.value,
         onHover: () {
           Get.find<NavController>().toggleIconOnly();
+        },
+        getCurrentRoute: (){
+          return Get.find<NavController>().selectedRoute.value;
         },
         items: [
           SHSiderBarItem(
@@ -29,7 +32,6 @@ class Sidebar extends StatelessWidget {
               SHSideBarMenuItem(
                   title: "Default",
                   onClick: () {
-                    log("Default");
                     Get.toNamed(Routes.DASHBOARD, id: getNavId());
                   }),
             ],
@@ -100,7 +102,7 @@ class Sidebar extends StatelessWidget {
                 icon: Icons.ads_click,
                 route: Routes.BUTTONS,
                 onClick: () {
-                  NavController.instance.navigateTo(Routes.BUTTONS);
+                  Get.toNamed(Routes.BUTTONS, id: getNavId());
                 },
               ),
             ],
