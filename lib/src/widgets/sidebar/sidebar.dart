@@ -12,7 +12,6 @@ class SHSideBar extends StatelessWidget {
     this.iconOnly = false,
     this.onHover,
     this.isCollapsed = false,
-    
     required this.selectedRoute,
   });
   final List<SHSiderBarItem> items;
@@ -39,16 +38,18 @@ class SHSideBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.grey.shade100,
         ),
-        child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (context, index) => SHSiderbarTile(
-                  item: items[index],
-                  isFirst: index == 0,
-                  iconOnly: iconOnly,
-                  onHover: onHover,
-                  selectedRoute: selectedRoute,
-                ),
-              ),
+        child: Scrollbar(
+          child: ListView.builder(
+            itemCount: items.length,
+            itemBuilder: (context, index) => SHSiderbarTile(
+              item: items[index],
+              isFirst: index == 0,
+              iconOnly: iconOnly,
+              onHover: onHover,
+              selectedRoute: selectedRoute,
+            ),
+          ),
+        ),
       ),
     );
   }
