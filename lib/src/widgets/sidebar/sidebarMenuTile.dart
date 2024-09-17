@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../shared/shared.dart';
+import '../../utils/themeExtensions.dart';
 import 'sidebarItem.dart';
 
 class SHSiderbarMenuTile extends StatefulWidget {
@@ -11,11 +12,13 @@ class SHSiderbarMenuTile extends StatefulWidget {
     this.level = 1,
     this.onTap,
     this.iconOnly = false,
+    required this.selectedRoute,
   });
   final SHSideBarMenuItem item;
   final int level;
   final VoidCallback? onTap;
   final bool iconOnly;
+  final String selectedRoute;
 
   @override
   State<SHSiderbarMenuTile> createState() => _SHSiderbarMenuTileState();
@@ -29,6 +32,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
   void initState() {
     collapsed = true;
     isHovering = false;
+
     super.initState();
   }
 
@@ -40,6 +44,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
 
   @override
   Widget build(BuildContext context) {
+    var isSelected = widget.selectedRoute == widget.item.route;
     return (widget.iconOnly && widget.item.icon == null)
         ? const SizedBox.shrink()
         : Padding(
@@ -49,11 +54,16 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Material(
-                  color: Colors.transparent,
+                  color: isSelected
+                      ? context.primaryColor.withOpacity(0.2)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(kr15),
                   child: InkWell(
                     onTap: widget.item.children.isNotEmpty
                         ? _toggle
-                        : widget.onTap,
+                        : isSelected
+                            ? null
+                            : widget.onTap,
                     borderRadius: BorderRadius.circular(kr15),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
@@ -93,6 +103,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                       level: widget.level + 1,
                       iconOnly: widget.iconOnly,
                       onTap: e.onClick,
+                      selectedRoute: widget.selectedRoute,
                     ),
                   )
               ],

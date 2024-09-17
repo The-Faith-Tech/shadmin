@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:shadmin_ui/routes/appPages.dart';
 
+import '../utils/navUtils.dart';
+
 class NavController extends GetxController {
   static NavController instance = Get.find();
   final isMenuColapsed = false.obs;
@@ -25,7 +27,8 @@ class NavController extends GetxController {
   }
 
   void changeRoute(String route) {
-    selectedRoute.value = route;
+    selectedRoute(route);
+    Get.toNamed(route, id: getNavId());
   }
 
   Future<dynamic> navigateTo(String routeName) {

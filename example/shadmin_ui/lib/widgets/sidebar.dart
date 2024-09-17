@@ -6,23 +6,21 @@ import 'package:shadmin/shadmin.dart';
 import 'package:shadmin_ui/controllers/navController.dart';
 
 import '../routes/appPages.dart';
-import '../utils/navUtils.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final navController = NavController.instance;
     return Obx(
       () => SHSideBar(
         version: "v1.0.0",
-        iconOnly: Get.find<NavController>().isIconOnly.value,
-        isCollapsed: Get.find<NavController>().isMenuColapsed.value,
+        selectedRoute: navController.selectedRoute.value,
+        iconOnly: navController.isIconOnly.value,
+        isCollapsed: navController.isMenuColapsed.value,
         onHover: () {
-          Get.find<NavController>().toggleIconOnly();
-        },
-        getCurrentRoute: (){
-          return Get.find<NavController>().selectedRoute.value;
+          navController.toggleIconOnly();
         },
         items: [
           SHSiderBarItem(
@@ -31,8 +29,9 @@ class Sidebar extends StatelessWidget {
             items: [
               SHSideBarMenuItem(
                   title: "Default",
+                  route: Routes.DASHBOARD,
                   onClick: () {
-                    Get.toNamed(Routes.DASHBOARD, id: getNavId());
+                    navController.changeRoute(Routes.DASHBOARD);
                   }),
             ],
           ),
@@ -102,7 +101,7 @@ class Sidebar extends StatelessWidget {
                 icon: Icons.ads_click,
                 route: Routes.BUTTONS,
                 onClick: () {
-                  Get.toNamed(Routes.BUTTONS, id: getNavId());
+                  navController.changeRoute(Routes.BUTTONS);
                 },
               ),
             ],

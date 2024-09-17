@@ -12,11 +12,13 @@ class SHSiderbarTile extends StatefulWidget {
     this.isFirst = false,
     this.iconOnly = false,
     this.onHover,
+    required this.selectedRoute,
   });
   final SHSiderBarItem item;
   final bool isFirst;
   final bool iconOnly;
   final VoidCallback? onHover;
+  final String selectedRoute;
 
   @override
   State<SHSiderbarTile> createState() => _SHSiderbarTileState();
@@ -88,6 +90,7 @@ class _SHSiderbarTileState extends State<SHSiderbarTile> {
                   item: e,
                   iconOnly: widget.iconOnly,
                   onTap: e.onClick,
+                  selectedRoute: widget.selectedRoute,
                 ),
               )
           ] else ...[
@@ -96,6 +99,7 @@ class _SHSiderbarTileState extends State<SHSiderbarTile> {
                 item: e,
                 iconOnly: widget.iconOnly,
                 onTap: e.onClick,
+                selectedRoute: widget.selectedRoute,
               ),
             )
           ]

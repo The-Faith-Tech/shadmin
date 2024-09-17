@@ -14,14 +14,14 @@ class SHSideBar extends StatelessWidget {
     this.onHover,
     this.isCollapsed = false,
     required this.version,
-    required this.getCurrentRoute,
+    required this.selectedRoute,
   });
   final List<SHSiderBarItem> items;
   final bool iconOnly;
   final bool isCollapsed;
   final VoidCallback? onHover;
   final String version;
-  final String Function() getCurrentRoute;
+  final String selectedRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,7 @@ class SHSideBar extends StatelessWidget {
                   isFirst: index == 0,
                   iconOnly: iconOnly,
                   onHover: onHover,
+                  selectedRoute: selectedRoute,
                 ),
               ),
             ),

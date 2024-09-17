@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shadmin_ui/controllers/navController.dart';
-import 'package:shadmin_ui/routes/nestedRouteObserver.dart';
 
 import '../routes/appPages.dart';
 import '../routes/appRouter.dart';
@@ -17,9 +16,6 @@ class DashNavigator extends StatelessWidget {
       key: Get.find<NavController>().dashNavKey,
       initialRoute: Routes.DASHBOARD,
       onUnknownRoute: AppRouter.handleUnknownRoute,
-      observers: [
-        NestedRouteObserver(Routes.DASHBOARD),
-      ],
       onGenerateRoute: (settings) {
         var routeUri = Uri.tryParse(settings.name.toString());
         log(routeUri?.toString() ?? "N/A", name: "GETX");
