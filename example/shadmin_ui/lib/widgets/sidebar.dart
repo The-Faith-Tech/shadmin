@@ -15,7 +15,6 @@ class Sidebar extends StatelessWidget {
     final navController = NavController.instance;
     return Obx(
       () => SHSideBar(
-        version: "v1.0.0",
         selectedRoute: navController.selectedRoute.value,
         iconOnly: navController.isIconOnly.value,
         isCollapsed: navController.isMenuColapsed.value,

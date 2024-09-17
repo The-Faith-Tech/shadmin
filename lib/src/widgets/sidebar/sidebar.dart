@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../components/text.dart';
 import '../../shared/shared.dart';
 import 'sidebarItem.dart';
 import 'sidebarTile.dart';
@@ -13,14 +12,13 @@ class SHSideBar extends StatelessWidget {
     this.iconOnly = false,
     this.onHover,
     this.isCollapsed = false,
-    required this.version,
+    
     required this.selectedRoute,
   });
   final List<SHSiderBarItem> items;
   final bool iconOnly;
   final bool isCollapsed;
   final VoidCallback? onHover;
-  final String version;
   final String selectedRoute;
 
   @override
@@ -41,10 +39,7 @@ class SHSideBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.grey.shade100,
         ),
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
+        child: ListView.builder(
                 itemCount: items.length,
                 itemBuilder: (context, index) => SHSiderbarTile(
                   item: items[index],
@@ -54,11 +49,6 @@ class SHSideBar extends StatelessWidget {
                   selectedRoute: selectedRoute,
                 ),
               ),
-            ),
-            SHText(version),
-            kvsSmall,
-          ],
-        ),
       ),
     );
   }
