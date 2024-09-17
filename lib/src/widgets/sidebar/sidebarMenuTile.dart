@@ -66,8 +66,10 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                             : widget.onTap,
                     borderRadius: BorderRadius.circular(kr15),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: khs2, vertical: khs2),
+                      padding: widget.iconOnly
+                          ? EdgeInsets.zero
+                          : EdgeInsets.symmetric(
+                              horizontal: khs2, vertical: khs2),
                       child: Row(
                         children: [
                           if (widget.item.icon != null) ...[
