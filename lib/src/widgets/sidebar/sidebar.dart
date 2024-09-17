@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../components/text.dart';
 import '../../shared/shared.dart';
 import 'sidebarItem.dart';
 import 'sidebarTile.dart';
@@ -11,11 +12,13 @@ class SHSideBar extends StatelessWidget {
       required this.items,
       this.iconOnly = false,
       this.onHover,
-      this.isCollapsed = false});
+      this.isCollapsed = false,
+      required this.version});
   final List<SHSiderBarItem> items;
   final bool iconOnly;
   final bool isCollapsed;
   final VoidCallback? onHover;
+  final String version;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class SHSideBar extends StatelessWidget {
                 ),
               ),
             ),
-            const Text("v1.0.0"),
+            SHText(version),
             kvsSmall,
           ],
         ),

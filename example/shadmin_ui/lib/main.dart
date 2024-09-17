@@ -37,9 +37,11 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.light,
-      initialRoute: Routes.LOGIN,
+      initialRoute: Routes.HOME,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
+      defaultTransition: Transition.noTransition,
+      transitionDuration: const Duration(milliseconds: 0),
     );
   }
 }

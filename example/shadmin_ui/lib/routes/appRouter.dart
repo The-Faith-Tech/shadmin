@@ -20,7 +20,7 @@ class AppRouter {
       route = "/$route";
     }
     switch (route) {
-      case Routes.HOME:
+      case Routes.DASHBOARD:
         return GetPageRoute(
           settings: settings,
           page: () => const HomeView(),
@@ -57,7 +57,7 @@ class AppRouter {
       }
       log(route, name: "NamedRoute: ");
       switch (route) {
-        // Product Detail
+        // Buttons
         case Routes.BUTTONS:
           Get.parameters = pathParams("${Routes.BUTTONS}/:id", routeUri);
           return GetPageRoute(

@@ -3,8 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shadmin_ui/controllers/navController.dart';
-import 'package:shadmin_ui/views/button/buttonsView.dart';
-import 'package:shadmin_ui/views/homeView.dart';
+import 'package:shadmin_ui/routes/nestedRouteObserver.dart';
 
 import '../routes/appPages.dart';
 import '../routes/appRouter.dart';
@@ -16,8 +15,11 @@ class DashNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Navigator(
       key: Get.find<NavController>().dashNavKey,
-      initialRoute: "/",
+      initialRoute: Routes.DASHBOARD,
       onUnknownRoute: AppRouter.handleUnknownRoute,
+      observers: [
+        NestedRouteObserver(Routes.DASHBOARD),
+      ],
       onGenerateRoute: (settings) {
         var routeUri = Uri.tryParse(settings.name.toString());
         log(routeUri?.toString() ?? "N/A", name: "GETX");
@@ -32,19 +34,6 @@ class DashNavigator extends StatelessWidget {
           route = "/$route";
         }
         switch (route) {
-          // Home
-          case Routes.HOME:
-            return GetPageRoute(
-              settings: settings,
-              page: () => const HomeView(),
-            );
-          // Buttons
-          case Routes.BUTTONS:
-            return GetPageRoute(
-              settings: settings,
-              page: () => const SHButtonsView(),
-            );
-
           default:
             return null;
         }

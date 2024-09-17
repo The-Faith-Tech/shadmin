@@ -5,8 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shadmin/shadmin.dart';
 import 'package:shadmin_ui/controllers/navController.dart';
-import 'package:shadmin_ui/routes/appPages.dart';
-import 'package:shadmin_ui/utils/navUtils.dart';
+import 'package:shadmin_ui/widgets/sidebar.dart';
 
 import '../widgets/dashNavigator.dart';
 
@@ -83,102 +82,10 @@ class NavView extends StatelessWidget {
               child: Row(
                 children: [
                   // Sidebar
-                  Obx(
-                    () => SHSideBar(
-                      iconOnly: Get.find<NavController>().isIconOnly.value,
-                      isCollapsed:
-                          Get.find<NavController>().isMenuColapsed.value,
-                      onHover: () {
-                        Get.find<NavController>().toggleIconOnly();
-                      },
-                      items: [
-                        SHSiderBarItem(
-                          title: "Dashboard",
-                          icon: Icons.dashboard,
-                          items: [
-                            SHSideBarMenuItem(
-                                title: "Default",
-                                onClick: () {
-                                  log("Default");
-                                  Get.toNamed(Routes.HOME, id: getNavId());
-                                }),
-                          ],
-                        ),
-                        SHSiderBarItem(
-                          title: "App",
-                          items: [
-                            SHSideBarMenuItem(
-                              title: "Authentication",
-                              icon: Icons.security,
-                              children: [
-                                SHSideBarMenuItem(
-                                  title: "Login",
-                                  onClick: () {
-                                    Get.toNamed(Routes.LOGIN);
-                                  },
-                                ),
-                                SHSideBarMenuItem(
-                                  title: "Register",
-                                  onClick: () {
-                                    Get.toNamed(Routes.REGISTER);
-                                  },
-                                ),
-                              ],
-                            ),
-                            SHSideBarMenuItem(
-                              title: "CRUD",
-                              icon: Icons.now_widgets,
-                              children: [
-                                SHSideBarMenuItem(
-                                  title: "CREATE",
-                                  onClick: () {
-                                    log("Create");
-                                  },
-                                ),
-                                SHSideBarMenuItem(
-                                  title: "GET",
-                                  children: [
-                                    SHSideBarMenuItem(
-                                      title: "ALL",
-                                      onClick: () {
-                                        log("All");
-                                      },
-                                    ),
-                                    SHSideBarMenuItem(
-                                      title: "SINGLE",
-                                      onClick: () {
-                                        log("Single");
-                                      },
-                                    ),
-                                  ],
-                                ),
-                                SHSideBarMenuItem(
-                                  title: "UPDATE",
-                                  onClick: () {
-                                    log("Update");
-                                  },
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SHSiderBarItem(
-                          title: "Components",
-                          items: [
-                            SHSideBarMenuItem(
-                                title: "Button",
-                                icon: Icons.ads_click,
-                                onClick: () {
-                                  Get.toNamed(Routes.BUTTONS, id: getNavId());
-                                }),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  const Sidebar(),
                   khsMedium,
                   // Content
-                  Expanded(
+                  const Expanded(
                     child: Column(
                       children: [
                         // Content
@@ -186,7 +93,7 @@ class NavView extends StatelessWidget {
                           child: DashNavigator(),
                         ),
                         // Footer
-                        const SHFooter(),
+                        SHFooter(),
                       ],
                     ),
                   )

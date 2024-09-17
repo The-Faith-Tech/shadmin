@@ -17,11 +17,13 @@ class SHSideBarMenuItem {
   final IconData? icon;
   final List<SHSideBarMenuItem> children;
   final VoidCallback? onClick;
+  final String? route;
 
   SHSideBarMenuItem({
     required this.title,
     this.icon,
     this.children = const [],
     this.onClick,
+    this.route,
   });
 }

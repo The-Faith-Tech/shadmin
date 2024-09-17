@@ -23,16 +23,24 @@ class SHSiderbarMenuTile extends StatefulWidget {
 
 class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
   late bool collapsed;
+  late bool isHovering;
 
   @override
   void initState() {
     collapsed = true;
+    isHovering = false;
     super.initState();
   }
 
   void _toggle() {
     setState(() {
       collapsed = !collapsed;
+    });
+  }
+
+  void _toggleHover(val) {
+    setState(() {
+      isHovering = val;
     });
   }
 
@@ -49,29 +57,34 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                 InkWell(
                   onTap:
                       widget.item.children.isNotEmpty ? _toggle : widget.onTap,
-                  child: Row(
-                    children: [
-                      if (widget.item.icon != null) ...[
-                        Icon(
-                          widget.item.icon,
-                          size: ks6.w,
-                        ),
-                      ] else ...[
-                        SizedBox(width: ks6.w),
+                  onHover: _toggleHover,
+                  child: Container(
+                    color:
+                        isHovering ? Colors.grey.shade300 : Colors.transparent,
+                    child: Row(
+                      children: [
+                        if (widget.item.icon != null) ...[
+                          Icon(
+                            widget.item.icon,
+                            size: ks6.w,
+                          ),
+                        ] else ...[
+                          SizedBox(width: ks6.w),
+                        ],
+                        khsSmall,
+                        if (!widget.iconOnly) ...[
+                          Expanded(
+                            child: Text(widget.item.title),
+                          ),
+                          if (widget.item.children.isNotEmpty) ...[
+                            khsTiny,
+                            Icon(collapsed
+                                ? Icons.keyboard_arrow_down
+                                : Icons.keyboard_arrow_up)
+                          ]
+                        ],
                       ],
-                      khsSmall,
-                      if (!widget.iconOnly) ...[
-                        Expanded(
-                          child: Text(widget.item.title),
-                        ),
-                        if (widget.item.children.isNotEmpty) ...[
-                          khsTiny,
-                          Icon(collapsed
-                              ? Icons.keyboard_arrow_down
-                              : Icons.keyboard_arrow_up)
-                        ]
-                      ],
-                    ],
+                    ),
                   ),
                 ),
                 kvsTiny,

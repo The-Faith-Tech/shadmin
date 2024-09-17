@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 
 class NavController extends GetxController {
+  static NavController instance = Get.find();
   final isMenuColapsed = false.obs;
   final isIconOnly = false.obs;
 
@@ -21,4 +24,15 @@ class NavController extends GetxController {
   toggleIconOnly() {
     isIconOnly(!isIconOnly.value);
   }
+
+  void changeRoute(String route) {
+    log("Change Route: $route");
+    // currentRoutes[selectedIndex.value] = route;
+  }
+
+  Future<dynamic> navigateTo(String routeName) {
+    return dashNavKey!.currentState!.pushNamed(routeName);
+  }
+
+  goBack() => dashNavKey!.currentState?.pop();
 }
