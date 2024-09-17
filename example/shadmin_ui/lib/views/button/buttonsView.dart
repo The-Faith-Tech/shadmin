@@ -42,6 +42,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
           children: [
             Center(
               child: SHSegmentedBtn(
+                width: 500,
                 labels: const ["Primary", "Icon", "Text"],
                 values: const [1, 2, 3],
                 selected: selectedBtn,
