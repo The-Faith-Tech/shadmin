@@ -51,7 +51,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
         ? const SizedBox.shrink()
         : Padding(
             padding: EdgeInsets.only(
-                left: widget.level * ks2.w, top: ks1.h, bottom: ks1.h),
+                left: widget.level * ks2.w, top: widget.iconOnly ? ks1.h : 0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
