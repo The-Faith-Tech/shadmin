@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:shadmin_ui/views/auth/forgotPasswordView.dart';
 import 'package:shadmin_ui/views/auth/loginView.dart';
 import 'package:shadmin_ui/views/auth/registerView.dart';
 import 'package:shadmin_ui/views/navView.dart';
@@ -24,6 +25,10 @@ class AppPages {
     GetPage(
       name: Routes.REGISTER,
       page: () => const RegisterView(),
+    ),
+    GetPage(
+      name: Routes.FORGOT_PASSWORD,
+      page: () => const ForgotPasswordView(),
     ),
     GetPage(
       name: Routes.BUTTONS,

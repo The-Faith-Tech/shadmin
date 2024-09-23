@@ -53,6 +53,12 @@ class Sidebar extends StatelessWidget {
                       Get.toNamed(Routes.REGISTER);
                     },
                   ),
+                  SHSideBarMenuItem(
+                    title: "Forgot Password",
+                    onClick: () {
+                      Get.toNamed(Routes.FORGOT_PASSWORD);
+                    },
+                  ),
                 ],
               ),
               SHSideBarMenuItem(

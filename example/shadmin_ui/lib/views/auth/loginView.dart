@@ -75,7 +75,9 @@ class LoginView extends StatelessWidget {
                     const Spacer(),
                     SHTextBtn(
                       label: "Forgot Password?",
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.FORGOT_PASSWORD);
+                      },
                     ),
                   ],
                 ),
