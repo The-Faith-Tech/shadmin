@@ -7,6 +7,7 @@ import 'package:shadmin/shadmin.dart';
 import 'package:shadmin_ui/controllers/navController.dart';
 import 'package:shadmin_ui/widgets/sidebar.dart';
 
+import '../constants/constants.dart';
 import '../widgets/dashNavigator.dart';
 
 class NavView extends StatelessWidget {
@@ -71,7 +72,8 @@ class NavView extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),
                     child: Image.network(
-                      "https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png",
+                      PROFILE_PIC_URL,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )

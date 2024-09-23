@@ -65,6 +65,12 @@ class Sidebar extends StatelessWidget {
                       Get.toNamed(Routes.RESET_PASSWORD);
                     },
                   ),
+                  SHSideBarMenuItem(
+                    title: "Lock Screen",
+                    onClick: () {
+                      Get.toNamed(Routes.LOCK_SCREEN);
+                    },
+                  ),
                 ],
               ),
               SHSideBarMenuItem(
