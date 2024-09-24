@@ -80,7 +80,7 @@ class Sidebar extends StatelessWidget {
                   SHSideBarMenuItem(
                     title: "CREATE",
                     onClick: () {
-                      log("Create");
+                      navController.changeRoute(Routes.CREATE_NEW);
                     },
                   ),
                   SHSideBarMenuItem(

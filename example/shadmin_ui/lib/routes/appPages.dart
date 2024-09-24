@@ -4,6 +4,7 @@ import 'package:shadmin_ui/views/auth/lockScreenView.dart';
 import 'package:shadmin_ui/views/auth/loginView.dart';
 import 'package:shadmin_ui/views/auth/registerView.dart';
 import 'package:shadmin_ui/views/auth/resetPasswordView.dart';
+import 'package:shadmin_ui/views/crud/createNewView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
 import '../bindings/navBinding.dart';
@@ -39,6 +40,10 @@ class AppPages {
     GetPage(
       name: Routes.LOCK_SCREEN,
       page: () => const LockScreenView(),
+    ),
+    GetPage(
+      name: Routes.CREATE_NEW,
+      page: () => const CreateNewView(),
     ),
     GetPage(
       name: Routes.BUTTONS,

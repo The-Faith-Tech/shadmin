@@ -2,8 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shadmin_ui/views/auth/loginView.dart';
-import 'package:shadmin_ui/views/auth/registerView.dart';
+import 'package:shadmin_ui/views/crud/createNewView.dart';
 import 'package:shadmin_ui/views/homeView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
@@ -23,17 +22,13 @@ class AppRouter {
       case Routes.DASHBOARD:
         return GetPageRoute(
           settings: settings,
-          page: () => const HomeView(),
+          // page: () => const HomeView(),
+          page: () => const CreateNewView(), // TODO: Revert
         );
-      case Routes.LOGIN:
+      case Routes.CREATE_NEW:
         return GetPageRoute(
           settings: settings,
-          page: () => const LoginView(),
-        );
-      case Routes.REGISTER:
-        return GetPageRoute(
-          settings: settings,
-          page: () => const RegisterView(),
+          page: () => const CreateNewView(),
         );
       case Routes.BUTTONS:
         return GetPageRoute(
