@@ -17,32 +17,31 @@ class InputBox extends StatelessWidget {
           Radius.circular(kr2),
         ),
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: khs5, vertical: khs3),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade500,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(kr1),
-                  topRight: Radius.circular(kr1),
-                ),
-              ),
-              child: SHText.heading(title),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: khs5, vertical: khs3),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: children,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: khs5, vertical: khs3),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade500,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(kr1),
+                topRight: Radius.circular(kr1),
               ),
             ),
-            kvsb5,
-          ],
-        ),
+            child: SHText.heading(title),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: khs5, vertical: khs3),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            ),
+          ),
+          kvsb5,
+        ],
       ),
     );
   }

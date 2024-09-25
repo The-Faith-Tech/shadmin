@@ -6,3 +6,4 @@ export 'sidebar/sidebarTile.dart';
 export 'sidebar/sidebarMenuTile.dart';
 export '../components/text.dart';
 export 'divider/divider.dart';
+export 'container/dottedContainer.dart';
