@@ -60,7 +60,7 @@ class LoginView extends StatelessWidget {
                   hint: "Email",
                 ),
                 kvsb4,
-                SHTextFF(
+                SHPasswordField(
                   controller: TextEditingController(),
                   hint: "Password",
                 ),
@@ -81,6 +81,7 @@ class LoginView extends StatelessWidget {
                     ),
                   ],
                 ),
+                kvsb3,
                 SizedBox(
                   width: double.infinity,
                   child: SHPrimaryBtn(

@@ -40,12 +40,12 @@ class ResetPasswordView extends StatelessWidget {
               children: [
                 SHText.heading("Reset new password?"),
                 kvsb9,
-                SHTextFF(
+                SHPasswordField(
                   controller: TextEditingController(),
                   hint: "New Passsword",
                 ),
                 kvsb3,
-                SHTextFF(
+                SHPasswordField(
                   controller: TextEditingController(),
                   hint: "Confirm Passsword",
                 ),

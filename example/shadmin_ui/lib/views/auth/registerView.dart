@@ -73,14 +73,14 @@ class RegisterView extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: SHTextFF(
+                      child: SHPasswordField(
                         controller: TextEditingController(),
                         hint: "Password",
                       ),
                     ),
                     khsb4,
                     Expanded(
-                      child: SHTextFF(
+                      child: SHPasswordField(
                         controller: TextEditingController(),
                         hint: "Confirm Password",
                       ),
@@ -97,6 +97,7 @@ class RegisterView extends StatelessWidget {
                     SHText("I accept the terms and privacy policy"),
                   ],
                 ),
+                kvsb3,
                 SizedBox(
                   width: double.infinity,
                   child: SHPrimaryBtn(

@@ -49,8 +49,7 @@ class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: double.infinity,
-      height: height ?? khs14,
+      height: height ?? khs12,
       margin: margin ?? EdgeInsets.zero,
       decoration: decoration(),
       child: ElevatedButton(

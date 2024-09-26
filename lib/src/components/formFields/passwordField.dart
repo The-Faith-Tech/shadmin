@@ -7,7 +7,7 @@ import '../../../shadmin.dart';
 class SHPasswordField extends StatefulWidget {
   const SHPasswordField({
     super.key,
-    required this.label,
+    this.label,
     required this.controller,
     this.hint,
     this.errorMessage = "",
@@ -16,7 +16,7 @@ class SHPasswordField extends StatefulWidget {
     this.floatingLabel = false,
   });
 
-  final String label;
+  final String? label;
   final TextEditingController controller;
   final TextInputAction textInputAction;
   final String? hint;
@@ -35,9 +35,9 @@ class _PasswordFieldState extends State<SHPasswordField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (!widget.floatingLabel) ...[
+        if (!widget.floatingLabel && widget.label != null) ...[
           Text(
-            widget.label,
+            widget.label ?? "Password",
             style: TextStyle(
               color: HexColor("#6B7280"),
               fontWeight: FontWeight.w500,
@@ -46,7 +46,7 @@ class _PasswordFieldState extends State<SHPasswordField> {
           SizedBox(height: ks2.h),
         ],
         TextField(
-          key: Key(widget.label),
+          key: Key(widget.label ?? "Password"),
           textInputAction: widget.textInputAction,
           cursorColor: Colors.black,
           controller: widget.controller,
@@ -88,7 +88,7 @@ class _PasswordFieldState extends State<SHPasswordField> {
               borderSide: BorderSide(color: HexColor("#D1D5DB")),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(kr4),
               borderSide: BorderSide(color: context.theme.primaryColor),
             ),
             suffixIcon: InkWell(

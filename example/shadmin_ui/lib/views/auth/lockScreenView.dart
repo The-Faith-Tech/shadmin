@@ -61,7 +61,7 @@ class LockScreenView extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: SHTextFF(
+                      child: SHPasswordField(
                         controller: TextEditingController(),
                         hint: "Confirm Passsword",
                       ),
