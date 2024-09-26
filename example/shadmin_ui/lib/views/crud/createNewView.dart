@@ -171,6 +171,54 @@ class CreateNewView extends StatelessWidget {
                         hint: "Enter email",
                         label: "Email",
                       ),
+                      kvsb3,
+                      SHDropdown<String>(
+                        value: null,
+                        label: "Select",
+                        items: [
+                          DropdownMenuItem(
+                            value: "one",
+                            child: SHText("Option One"),
+                          ),
+                          DropdownMenuItem(
+                            value: "two",
+                            child: SHText("Option Two"),
+                          ),
+                          DropdownMenuItem(
+                            value: "three",
+                            child: SHText("Option Three"),
+                          ),
+                        ],
+                        onChanged: (val) {},
+                      ),
+                      kvsb4,
+                      Row(
+                        children: [
+                          SHText("Gender:"),
+                          khsb3,
+                          const SHRadio(
+                            isActive: true,
+                          ),
+                          khsb1,
+                          SHText("Male"),
+                          khsb4,
+                          const SHRadio(),
+                          khsb1,
+                          SHText("Female"),
+                        ],
+                      ),
+                      kvsb4,
+                      Row(
+                        children: [
+                          SHCheckbox(
+                            value: true,
+                            onChanged: (val) {},
+                          ),
+                          khsb3,
+                          SHText("Please accept terms and condition"),
+                        ],
+                      ),
+                      kvsb4,
                     ],
                   ),
                 ),
