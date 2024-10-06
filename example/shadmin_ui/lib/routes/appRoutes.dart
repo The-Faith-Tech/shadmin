@@ -9,5 +9,6 @@ abstract class Routes {
   static const RESET_PASSWORD = '/auth/resetPassword';
   static const LOCK_SCREEN = '/auth/lockScreen';
   static const CREATE_NEW = '/crud/createNew';
+  static const GET_ALL = '/crud/getAll';
   static const BUTTONS = '/buttons';
 }

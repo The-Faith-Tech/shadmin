@@ -5,6 +5,7 @@ import 'package:shadmin_ui/views/auth/loginView.dart';
 import 'package:shadmin_ui/views/auth/registerView.dart';
 import 'package:shadmin_ui/views/auth/resetPasswordView.dart';
 import 'package:shadmin_ui/views/crud/createNewView.dart';
+import 'package:shadmin_ui/views/crud/tableView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
 import '../bindings/navBinding.dart';
@@ -44,6 +45,10 @@ class AppPages {
     GetPage(
       name: Routes.CREATE_NEW,
       page: () => const CreateNewView(),
+    ),
+    GetPage(
+      name: Routes.GET_ALL,
+      page: () => const TableView(),
     ),
     GetPage(
       name: Routes.BUTTONS,

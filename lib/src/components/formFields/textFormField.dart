@@ -100,7 +100,7 @@ class SHTextFF extends StatelessWidget {
                     padding: EdgeInsets.only(left: ks4.w, right: ks2.w),
                     child: Icon(
                       prefixIcon,
-                      size: ks4.w,
+                      size: ks5.w,
                     ),
                   )
                 : null,

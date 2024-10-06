@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shadmin_ui/views/crud/createNewView.dart';
+import 'package:shadmin_ui/views/crud/tableView.dart';
 import 'package:shadmin_ui/views/homeView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
@@ -23,12 +24,17 @@ class AppRouter {
         return GetPageRoute(
           settings: settings,
           // page: () => const HomeView(),
-          page: () => const CreateNewView(), // TODO: Revert
+          page: () => const TableView(), // TODO: Revert
         );
       case Routes.CREATE_NEW:
         return GetPageRoute(
           settings: settings,
           page: () => const CreateNewView(),
+        );
+      case Routes.GET_ALL:
+        return GetPageRoute(
+          settings: settings,
+          page: () => const TableView(),
         );
       case Routes.BUTTONS:
         return GetPageRoute(

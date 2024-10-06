@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shadmin/shadmin.dart';
@@ -89,22 +87,10 @@ class Sidebar extends StatelessWidget {
                       SHSideBarMenuItem(
                         title: "ALL",
                         onClick: () {
-                          log("All");
-                        },
-                      ),
-                      SHSideBarMenuItem(
-                        title: "SINGLE",
-                        onClick: () {
-                          log("Single");
+                          navController.changeRoute(Routes.GET_ALL);
                         },
                       ),
                     ],
-                  ),
-                  SHSideBarMenuItem(
-                    title: "UPDATE",
-                    onClick: () {
-                      log("Update");
-                    },
                   ),
                 ],
               ),
