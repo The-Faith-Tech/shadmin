@@ -7,3 +7,4 @@ export 'sidebar/sidebarMenuTile.dart';
 export '../components/text.dart';
 export 'divider/divider.dart';
 export 'container/dottedContainer.dart';
+export 'container/inputBox.dart';

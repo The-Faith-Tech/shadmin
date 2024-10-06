@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:shadmin/shadmin.dart';
 import 'package:shadmin_ui/utils/fileUtils.dart';
-import 'package:shadmin_ui/widgets/inputBox.dart';
 
 class CreateNewView extends StatelessWidget {
   const CreateNewView({super.key});
@@ -41,7 +40,7 @@ class CreateNewView extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        InputBox(
+                        SHInputBox(
                           title: "Details",
                           children: [
                             SHTextFF(
@@ -109,7 +108,7 @@ class CreateNewView extends StatelessWidget {
                           ],
                         ),
                         kvsb5,
-                        InputBox(
+                        SHInputBox(
                           title: "Upload Photos",
                           children: [
                             InkWell(
@@ -135,7 +134,7 @@ class CreateNewView extends StatelessWidget {
                           ],
                         ),
                         kvsb5,
-                        InputBox(
+                        SHInputBox(
                           title: "Select",
                           children: [
                             GestureDetector(
@@ -163,7 +162,7 @@ class CreateNewView extends StatelessWidget {
                 khsb5,
                 Expanded(
                   flex: 2,
-                  child: InputBox(
+                  child: SHInputBox(
                     title: "Other Info",
                     children: [
                       SHTextFF(
