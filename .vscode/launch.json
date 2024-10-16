@@ -26,7 +26,14 @@
       "cwd": "example/shadmin_ui",
       "request": "launch",
       "type": "dart",
-      "args": ["-d", "chrome", "--web-renderer", "html"]
+      "args": [
+        "-d",
+        "chrome",
+        "--web-renderer",
+        "html",
+        "--web-browser-flag",
+        "--disable-web-security"
+      ]
     },
     {
       "name": "shadmin_ui (profile mode)",
