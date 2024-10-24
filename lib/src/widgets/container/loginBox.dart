@@ -18,7 +18,7 @@ class SHLoginBox extends StatelessWidget {
     required this.remember,
     required this.logoUrl,
     required this.title,
-    this.isEmailEnabled = true,
+    this.isEmailEnabled = true, required this.formKey,
   });
   final VoidCallback onCreateAccount;
   final VoidCallback onForgotPassword;
@@ -32,7 +32,7 @@ class SHLoginBox extends StatelessWidget {
   final String logoUrl;
   final String title;
   final bool isEmailEnabled;
-
+  final GlobalKey<FormState> formKey;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,92 +63,95 @@ class SHLoginBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           padding: EdgeInsets.symmetric(horizontal: khs13, vertical: kvs12),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                children: [
-                  SHText.heading("Log in"),
-                  const Spacer(),
-                  SHText("or"),
-                  SHTextBtn(
-                    label: "Create an Account",
-                    onPressed: onCreateAccount,
-                  ),
-                ],
-              ),
-              kvsb3,
-              SHTextFF(
-                controller: emailController,
-                hint: "Email",
-                enabled: isEmailEnabled,
-                validator: (val) {
-                  if (val == null || val.isEmpty) {
-                    return "Email is required";
-                  }
-                  return null;
-                },
-              ),
-              kvsb4,
-              SHPasswordField(
-                controller: passwordController,
-                hint: "Password",
-                validator: (val) {
-                  if (val == null || val.isEmpty) {
-                    return "Password is required";
-                  }
-                  return null;
-                },
-              ),
-              kvsb5,
-              Row(
-                children: [
-                  Checkbox(
-                    value: remember,
-                    onChanged: onRememberMe,
-                  ),
-                  SHText("Remember me"),
-                  const Spacer(),
-                  SHTextBtn(
-                    label: "Forgot Password?",
-                    onPressed: onForgotPassword,
-                  ),
-                ],
-              ),
-              kvsb3,
-              SizedBox(
-                width: double.infinity,
-                child: SHPrimaryBtn(
-                  text: "Login",
-                  onPressed: onLogin,
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    SHText.heading("Log in"),
+                    const Spacer(),
+                    SHText("or"),
+                    SHTextBtn(
+                      label: "Create an Account",
+                      onPressed: onCreateAccount,
+                    ),
+                  ],
                 ),
-              ),
-              SHDivider(
-                text: "or log in with",
-                padding: EdgeInsets.symmetric(vertical: kvs5),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: SHPrimaryBtn(
-                      text: "google",
-                      color: HexColor("#dd4b39"),
-                      isOutlined: true,
-                      onPressed: onGoogleLogin ?? () {},
+                kvsb3,
+                SHTextFF(
+                  controller: emailController,
+                  hint: "Email",
+                  enabled: isEmailEnabled,
+                  validator: (val) {
+                    if (val == null || val.isEmpty) {
+                      return "Email is required";
+                    }
+                    return null;
+                  },
+                ),
+                kvsb4,
+                SHPasswordField(
+                  controller: passwordController,
+                  hint: "Password",
+                  validator: (val) {
+                    if (val == null || val.isEmpty) {
+                      return "Password is required";
+                    }
+                    return null;
+                  },
+                ),
+                kvsb5,
+                Row(
+                  children: [
+                    Checkbox(
+                      value: remember,
+                      onChanged: onRememberMe,
                     ),
-                  ),
-                  khsMedium,
-                  Expanded(
-                    child: SHPrimaryBtn(
-                      text: "facebook",
-                      isOutlined: true,
-                      color: HexColor("3c5a99"),
-                      onPressed: onFacebookLogin ?? () {},
+                    SHText("Remember me"),
+                    const Spacer(),
+                    SHTextBtn(
+                      label: "Forgot Password?",
+                      onPressed: onForgotPassword,
                     ),
+                  ],
+                ),
+                kvsb3,
+                SizedBox(
+                  width: double.infinity,
+                  child: SHPrimaryBtn(
+                    text: "Login",
+                    onPressed: onLogin,
                   ),
-                ],
-              )
-            ],
+                ),
+                SHDivider(
+                  text: "or log in with",
+                  padding: EdgeInsets.symmetric(vertical: kvs5),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SHPrimaryBtn(
+                        text: "google",
+                        color: HexColor("#dd4b39"),
+                        isOutlined: true,
+                        onPressed: onGoogleLogin ?? () {},
+                      ),
+                    ),
+                    khsMedium,
+                    Expanded(
+                      child: SHPrimaryBtn(
+                        text: "facebook",
+                        isOutlined: true,
+                        color: HexColor("3c5a99"),
+                        onPressed: onFacebookLogin ?? () {},
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         )
       ],
