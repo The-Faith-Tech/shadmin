@@ -13,7 +13,7 @@ class SHPasswordField extends StatefulWidget {
     this.errorMessage = "",
     this.textInputAction = TextInputAction.done,
     this.prefixIcon,
-    this.floatingLabel = false,
+    this.floatingLabel = false, this.validator,
   });
 
   final String? label;
@@ -23,6 +23,8 @@ class SHPasswordField extends StatefulWidget {
   final String errorMessage;
   final IconData? prefixIcon;
   final bool floatingLabel;
+  final String? Function(String?)? validator;
+
 
   @override
   State<SHPasswordField> createState() => _PasswordFieldState();
@@ -45,12 +47,13 @@ class _PasswordFieldState extends State<SHPasswordField> {
           ),
           SizedBox(height: ks2.h),
         ],
-        TextField(
+        TextFormField(
           key: Key(widget.label ?? "Password"),
           textInputAction: widget.textInputAction,
           cursorColor: Colors.black,
           controller: widget.controller,
           obscureText: !_isVisible,
+          validator: widget.validator,
           style: TextStyle(color: HexColor("#2F3032"), fontSize: ks4.sp),
           decoration: InputDecoration(
             fillColor: HexColor("#F9FAFB"),

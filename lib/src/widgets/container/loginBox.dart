@@ -18,6 +18,7 @@ class SHLoginBox extends StatelessWidget {
     required this.remember,
     required this.logoUrl,
     required this.title,
+    this.isEmailEnabled = true,
   });
   final VoidCallback onCreateAccount;
   final VoidCallback onForgotPassword;
@@ -30,6 +31,7 @@ class SHLoginBox extends StatelessWidget {
   final TextEditingController passwordController;
   final String logoUrl;
   final String title;
+  final bool isEmailEnabled;
 
   @override
   Widget build(BuildContext context) {
@@ -79,11 +81,24 @@ class SHLoginBox extends StatelessWidget {
               SHTextFF(
                 controller: emailController,
                 hint: "Email",
+                enabled: isEmailEnabled,
+                validator: (val) {
+                  if (val == null || val.isEmpty) {
+                    return "Email is required";
+                  }
+                  return null;
+                },
               ),
               kvsb4,
               SHPasswordField(
                 controller: passwordController,
                 hint: "Password",
+                validator: (val) {
+                  if (val == null || val.isEmpty) {
+                    return "Password is required";
+                  }
+                  return null;
+                },
               ),
               kvsb5,
               Row(
