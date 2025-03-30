@@ -8,7 +8,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: [SHText("HomeView")],
+        children: [MyText("HomeView")],
       ),
     );
   }

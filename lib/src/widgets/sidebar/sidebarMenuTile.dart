@@ -94,7 +94,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                           khsSmall,
                           if (!widget.iconOnly) ...[
                             Expanded(
-                              child: SHText(
+                              child: MyText(
                                 widget.item.title,
                                 color: selectedColor,
                                 isBold: isSelected,

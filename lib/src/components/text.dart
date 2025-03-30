@@ -6,8 +6,8 @@ FontWeight _boldWeight = FontWeight.w700;
 FontWeight _semiBoldWeight = FontWeight.w500;
 FontWeight _normalWeight = FontWeight.normal;
 
-class SHText extends StatelessWidget {
-  SHText(
+class MyText extends StatelessWidget {
+  MyText(
     this.text, {
     super.key,
     this.maxLines,
@@ -56,7 +56,7 @@ class SHText extends StatelessWidget {
   final bool isRight;
   final bool isJustify;
 
-  SHText.heading(
+  MyText.heading(
     this.text, {
     super.key,
     this.maxLines,
@@ -86,7 +86,7 @@ class SHText extends StatelessWidget {
                   : null,
           fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
         );
-  SHText.subHeading(
+  MyText.subHeading(
     this.text, {
     super.key,
     this.maxLines,
@@ -116,7 +116,7 @@ class SHText extends StatelessWidget {
                   : null,
           fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
         );
-  SHText.body(
+  MyText.body(
     this.text, {
     super.key,
     this.maxLines,
@@ -146,7 +146,7 @@ class SHText extends StatelessWidget {
                   : null,
           fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
         );
-  SHText.small(
+  MyText.small(
     this.text, {
     super.key,
     this.maxLines,

@@ -21,8 +21,8 @@ class CreateNewView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SHText("Create New"),
-                SHTextBtn(
+                MyText("Create New"),
+                MyTextBtn(
                   label: "Save",
                   isTonal: true,
                   onPressed: () {},
@@ -126,7 +126,7 @@ class CreateNewView extends StatelessWidget {
                                       children: [
                                         const Icon(Icons.cloud_upload_rounded),
                                         khsb4,
-                                        SHText("Drop your files here"),
+                                        MyText("Drop your files here"),
                                       ],
                                     ),
                                   )),
@@ -177,15 +177,15 @@ class CreateNewView extends StatelessWidget {
                         items: [
                           DropdownMenuItem(
                             value: "one",
-                            child: SHText("Option One"),
+                            child: MyText("Option One"),
                           ),
                           DropdownMenuItem(
                             value: "two",
-                            child: SHText("Option Two"),
+                            child: MyText("Option Two"),
                           ),
                           DropdownMenuItem(
                             value: "three",
-                            child: SHText("Option Three"),
+                            child: MyText("Option Three"),
                           ),
                         ],
                         onChanged: (val) {},
@@ -193,17 +193,17 @@ class CreateNewView extends StatelessWidget {
                       kvsb4,
                       Row(
                         children: [
-                          SHText("Gender:"),
+                          MyText("Gender:"),
                           khsb3,
                           const SHRadio(
                             isActive: true,
                           ),
                           khsb1,
-                          SHText("Male"),
+                          MyText("Male"),
                           khsb4,
                           const SHRadio(),
                           khsb1,
-                          SHText("Female"),
+                          MyText("Female"),
                         ],
                       ),
                       kvsb4,
@@ -214,7 +214,7 @@ class CreateNewView extends StatelessWidget {
                             onChanged: (val) {},
                           ),
                           khsb3,
-                          SHText("Please accept terms and condition"),
+                          MyText("Please accept terms and condition"),
                         ],
                       ),
                       kvsb4,

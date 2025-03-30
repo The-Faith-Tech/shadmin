@@ -20,7 +20,7 @@ class ResetPasswordView extends StatelessWidget {
                   size: ks11.w,
                 ),
                 khsSmall,
-                SHText(
+                MyText(
                   "Shadmin",
                   size: ks7.spMin,
                 ),
@@ -38,7 +38,7 @@ class ResetPasswordView extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SHText.heading("Reset new password?"),
+                MyText.heading("Reset new password?"),
                 kvsb9,
                 SHPasswordField(
                   controller: TextEditingController(),
@@ -52,7 +52,7 @@ class ResetPasswordView extends StatelessWidget {
                 kvsb5,
                 SizedBox(
                   width: double.infinity,
-                  child: SHPrimaryBtn(
+                  child: PrimaryButton(
                     text: "Set password",
                     onPressed: () {},
                   ),

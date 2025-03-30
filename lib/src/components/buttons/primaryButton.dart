@@ -7,14 +7,14 @@ abstract class _PrimaryBtn {
   ButtonStyle elevatedBtnStyle(BuildContext context);
   ButtonStyle outlinedBtnStyle(BuildContext context);
   Icon buildIcon(BuildContext context, IconData icon);
-  SHText buildText(BuildContext context);
+  MyText buildText(BuildContext context);
   Decoration decoration();
   Widget buildProgress(BuildContext context);
   Color? foreColor(BuildContext context);
 }
 
-class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
-  const SHPrimaryBtn({
+class PrimaryButton extends StatelessWidget implements _PrimaryBtn {
+  const PrimaryButton({
     super.key,
     required this.text,
     required this.onPressed,
@@ -118,8 +118,8 @@ class SHPrimaryBtn extends StatelessWidget implements _PrimaryBtn {
   }
 
   @override
-  SHText buildText(BuildContext context) {
-    return SHText(
+  MyText buildText(BuildContext context) {
+    return MyText(
       text,
       color: foreColor(context),
       maxLines: 1,

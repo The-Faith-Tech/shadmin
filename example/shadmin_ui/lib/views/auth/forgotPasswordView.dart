@@ -21,7 +21,7 @@ class ForgotPasswordView extends StatelessWidget {
                   size: ks11.w,
                 ),
                 khsSmall,
-                SHText(
+                MyText(
                   "Shadmin",
                   size: ks7.spMin,
                 ),
@@ -39,9 +39,9 @@ class ForgotPasswordView extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SHText.heading("Forgot your password?"),
+                MyText.heading("Forgot your password?"),
                 kvsb3,
-                SHText.subHeading(
+                MyText.subHeading(
                     "Enter your email and we'll send you a reset link."),
                 kvsb3,
                 SHTextFF(
@@ -51,15 +51,15 @@ class ForgotPasswordView extends StatelessWidget {
                 kvsb5,
                 SizedBox(
                   width: double.infinity,
-                  child: SHPrimaryBtn(
+                  child: PrimaryButton(
                     text: "Send reset link",
                     onPressed: () {},
                   ),
                 ),
                 kvsb5,
-                SHText("I can't recover my account using this page."),
+                MyText("I can't recover my account using this page."),
                 kvsb3,
-                SHTextBtn(
+                MyTextBtn(
                   label: "Back to login",
                   onPressed: () {
                     Get.back();

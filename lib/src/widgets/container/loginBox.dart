@@ -18,7 +18,8 @@ class SHLoginBox extends StatelessWidget {
     required this.remember,
     required this.logoUrl,
     required this.title,
-    this.isEmailEnabled = true, required this.formKey,
+    this.isEmailEnabled = true,
+    required this.formKey,
   });
   final VoidCallback onCreateAccount;
   final VoidCallback onForgotPassword;
@@ -48,7 +49,7 @@ class SHLoginBox extends StatelessWidget {
                 width: ks11.w,
               ),
               khsSmall,
-              SHText(
+              MyText(
                 title,
                 size: ks7.spMin,
               ),
@@ -70,10 +71,10 @@ class SHLoginBox extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SHText.heading("Log in"),
+                    MyText.heading("Log in"),
                     const Spacer(),
-                    SHText("or"),
-                    SHTextBtn(
+                    MyText("or"),
+                    MyTextBtn(
                       label: "Create an Account",
                       onPressed: onCreateAccount,
                     ),
@@ -109,9 +110,9 @@ class SHLoginBox extends StatelessWidget {
                       value: remember,
                       onChanged: onRememberMe,
                     ),
-                    SHText("Remember me"),
+                    MyText("Remember me"),
                     const Spacer(),
-                    SHTextBtn(
+                    MyTextBtn(
                       label: "Forgot Password?",
                       onPressed: onForgotPassword,
                     ),
@@ -120,7 +121,7 @@ class SHLoginBox extends StatelessWidget {
                 kvsb3,
                 SizedBox(
                   width: double.infinity,
-                  child: SHPrimaryBtn(
+                  child: PrimaryButton(
                     text: "Login",
                     onPressed: onLogin,
                   ),
@@ -132,7 +133,7 @@ class SHLoginBox extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: SHPrimaryBtn(
+                      child: PrimaryButton(
                         text: "google",
                         color: HexColor("#dd4b39"),
                         isOutlined: true,
@@ -141,7 +142,7 @@ class SHLoginBox extends StatelessWidget {
                     ),
                     khsMedium,
                     Expanded(
-                      child: SHPrimaryBtn(
+                      child: PrimaryButton(
                         text: "facebook",
                         isOutlined: true,
                         color: HexColor("3c5a99"),

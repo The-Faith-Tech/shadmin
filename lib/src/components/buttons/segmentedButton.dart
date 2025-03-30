@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../text.dart';
 
-class SHSegmentedBtn<T> extends StatelessWidget {
-  const SHSegmentedBtn({
+class MySegmentedBtn<T> extends StatelessWidget {
+  const MySegmentedBtn({
     super.key,
     required this.values,
     required this.selected,
@@ -29,7 +29,7 @@ class SHSegmentedBtn<T> extends StatelessWidget {
           values.length,
           (index) => ButtonSegment(
             value: values[index],
-            label: SHText.body(labels[index]),
+            label: MyText.body(labels[index]),
             tooltip: labels[index],
           ),
         ),

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shadmin_ui/views/crud/createNewView.dart';
 import 'package:shadmin_ui/views/crud/tableView.dart';
-import 'package:shadmin_ui/views/homeView.dart';
 import 'package:shadmin_ui/views/navView.dart';
 
 import '../utils/navUtils.dart';

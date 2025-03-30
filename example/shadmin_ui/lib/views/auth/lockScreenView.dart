@@ -22,7 +22,7 @@ class LockScreenView extends StatelessWidget {
                   size: ks11.w,
                 ),
                 khsSmall,
-                SHText(
+                MyText(
                   "Shadmin",
                   size: ks7.spMin,
                 ),
@@ -55,8 +55,8 @@ class LockScreenView extends StatelessWidget {
                   ),
                 ),
                 kvsb7,
-                SHText.heading("Hi! There"),
-                SHText.subHeading("Enter your password to access the admin"),
+                MyText.heading("Hi! There"),
+                MyText.subHeading("Enter your password to access the admin"),
                 kvsb7,
                 Row(
                   children: [
@@ -67,7 +67,7 @@ class LockScreenView extends StatelessWidget {
                       ),
                     ),
                     khsb4,
-                    SHPrimaryBtn(
+                    PrimaryButton(
                       text: "Login",
                       onPressed: () {},
                     ),

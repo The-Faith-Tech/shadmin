@@ -32,7 +32,7 @@ class SHInputBox extends StatelessWidget {
                 topRight: Radius.circular(kr1),
               ),
             ),
-            child: SHText.heading(title),
+            child: MyText.heading(title),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: khs5, vertical: khs3),

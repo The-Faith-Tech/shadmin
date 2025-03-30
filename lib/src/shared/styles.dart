@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'shared.dart';
 
 TextStyle heading = TextStyle(
-  fontSize: kfH,
+  fontSize: kf6,
 );
 
 TextStyle subHeading = TextStyle(
-  fontSize: kfSH,
+  fontSize: kf5,
 );
 
 TextStyle normal = TextStyle(
@@ -15,9 +15,9 @@ TextStyle normal = TextStyle(
 );
 
 TextStyle body = TextStyle(
-  fontSize: kfB,
+  fontSize: kf4,
 );
 
 TextStyle small = TextStyle(
-  fontSize: kfSM,
+  fontSize: kf35,
 );

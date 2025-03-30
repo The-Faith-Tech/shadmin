@@ -19,9 +19,9 @@ class PrimaryButtonShowCase extends StatelessWidget {
     return Column(
       // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SHText.heading("Primary Button"),
+        MyText.heading("Primary Button"),
         kvsb4,
-        SHPrimaryBtn(
+        PrimaryButton(
           text: "Primary Button",
           onPressed: () {},
           isDisabled: isDisabled,
@@ -33,7 +33,7 @@ class PrimaryButtonShowCase extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: SHPrimaryBtn(
+              child: PrimaryButton(
                 text: "Primary Button",
                 onPressed: () {},
                 isDisabled: isDisabled,
@@ -44,7 +44,7 @@ class PrimaryButtonShowCase extends StatelessWidget {
             ),
             khsb2,
             Expanded(
-              child: SHPrimaryBtn(
+              child: PrimaryButton(
                 text: "Primary Button",
                 onPressed: () {},
                 isDisabled: isDisabled,
@@ -63,7 +63,7 @@ class PrimaryButtonShowCase extends StatelessWidget {
             ),
             Expanded(
               flex: 3,
-              child: SHPrimaryBtn(
+              child: PrimaryButton(
                 text: "Primary Button",
                 onPressed: () {},
                 isDisabled: isDisabled,

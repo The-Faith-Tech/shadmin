@@ -24,7 +24,7 @@ class TextBtnShowCase extends StatelessWidget {
           runSpacing: kvs3,
           spacing: khs4,
           children: [
-            ...[kr1, kr15, kr2, kr3, kr4, kr45].map((e) => SHTextBtn(
+            ...[kr1, kr15, kr2, kr3, kr4, kr45].map((e) => MyTextBtn(
                   label: "Label",
                   isOutlined: isOutlined,
                   isDisabled: isDisabled,

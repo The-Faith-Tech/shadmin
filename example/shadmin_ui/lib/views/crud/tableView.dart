@@ -16,7 +16,7 @@ class TableView extends StatelessWidget {
           PaginatedDataTable(
             columns: [
               ...["Id", "Name", "Email", "Address", "Actions"]
-                  .map((e) => DataColumn(label: SHText(e))),
+                  .map((e) => DataColumn(label: MyText(e))),
             ],
             source: _UserDataSource(
               data: List.generate(
@@ -37,7 +37,7 @@ class TableView extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  SHText.heading("Users"),
+                  MyText.heading("Users"),
                   khsb4,
                   SizedBox(
                     width: 350.w,
@@ -52,7 +52,7 @@ class TableView extends StatelessWidget {
             ),
             headingRowHeight: 90.h,
             actions: [
-              SHIconBtn(
+              MyIconBtn(
                 icon: Icons.filter_alt_sharp,
                 onPressed: () {},
               )
@@ -86,14 +86,14 @@ class _UserDataSource extends DataTableSource {
       DataCell(
         Row(
           children: [
-            SHIconBtn(
+            MyIconBtn(
               icon: Icons.edit,
               color: Colors.blue,
               isOutlined: true,
               onPressed: () {},
             ),
             khsb2,
-            SHIconBtn(
+            MyIconBtn(
               icon: CupertinoIcons.delete,
               color: Colors.red,
               isTonal: true,

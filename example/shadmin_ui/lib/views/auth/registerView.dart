@@ -23,7 +23,7 @@ class RegisterView extends StatelessWidget {
                   size: ks11.w,
                 ),
                 khsSmall,
-                SHText(
+                MyText(
                   "Shadmin",
                   size: ks7.spMin,
                 ),
@@ -43,10 +43,10 @@ class RegisterView extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SHText.heading("Register"),
+                    MyText.heading("Register"),
                     const Spacer(),
-                    SHText("Have an account?"),
-                    SHTextBtn(
+                    MyText("Have an account?"),
+                    MyTextBtn(
                       label: "Login",
                       onPressed: () {
                         Get.offAllNamed(Routes.LOGIN);
@@ -94,13 +94,13 @@ class RegisterView extends StatelessWidget {
                       value: true,
                       onChanged: (val) {},
                     ),
-                    SHText("I accept the terms and privacy policy"),
+                    MyText("I accept the terms and privacy policy"),
                   ],
                 ),
                 kvsb3,
                 SizedBox(
                   width: double.infinity,
-                  child: SHPrimaryBtn(
+                  child: PrimaryButton(
                     text: "Register",
                     onPressed: () {
                       Get.offAllNamed(Routes.HOME);
@@ -114,7 +114,7 @@ class RegisterView extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: SHPrimaryBtn(
+                      child: PrimaryButton(
                         text: "google",
                         color: HexColor("#dd4b39"),
                         isOutlined: true,
@@ -123,7 +123,7 @@ class RegisterView extends StatelessWidget {
                     ),
                     khsMedium,
                     Expanded(
-                      child: SHPrimaryBtn(
+                      child: PrimaryButton(
                         text: "facebook",
                         isOutlined: true,
                         color: HexColor("3c5a99"),

@@ -97,15 +97,15 @@ class SHDialog extends StatelessWidget {
             child: Column(
               children: [
                 kvsb3,
-                SHText.subHeading(
+                MyText.subHeading(
                   options.title,
                   isSemiBold: true,
                 ),
-                SHText(
+                MyText(
                   options.description,
                 ),
                 kvsb3,
-                SHPrimaryBtn(
+                PrimaryButton(
                   text: options.buttonTxt,
                   isOutlined: true,
                   height: kvs11,

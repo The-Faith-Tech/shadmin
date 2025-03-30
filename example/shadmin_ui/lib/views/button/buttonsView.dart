@@ -41,7 +41,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
         child: Column(
           children: [
             Center(
-              child: SHSegmentedBtn(
+              child: MySegmentedBtn(
                 width: 500,
                 labels: const ["Primary", "Icon", "Text"],
                 values: const [1, 2, 3],
@@ -67,7 +67,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
               ),
             ],
             if (selectedBtn == 2) ...[
-              SHText.heading("Icon Button"),
+              MyText.heading("Icon Button"),
               kvsb4,
               IconBtnShowCase(
                 icon: Icons.settings_outlined,
@@ -78,7 +78,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
             ],
             if (selectedBtn == 3) ...[
               _buildControls(context),
-              SHText.heading("Text Button"),
+              MyText.heading("Text Button"),
               kvsb2,
               TextBtnShowCase(
                 isDisabled: isDisabled,
@@ -100,7 +100,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
       children: [
         Row(
           children: [
-            SHText("Disabled"),
+            MyText("Disabled"),
             Checkbox(
               value: isDisabled,
               onChanged: (val) {
@@ -109,7 +109,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
                 });
               },
             ),
-            SHText("Outlined"),
+            MyText("Outlined"),
             Checkbox(
               value: isOutlined,
               onChanged: (val) {
@@ -118,7 +118,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
                 });
               },
             ),
-            SHText("Loading"),
+            MyText("Loading"),
             Checkbox(
               value: isLoading,
               onChanged: (val) {
@@ -131,7 +131,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
         ),
         Row(
           children: [
-            SHText("Icon"),
+            MyText("Icon"),
             Checkbox(
               value: showIcon,
               onChanged: (val) {
@@ -140,7 +140,7 @@ class _SHButtonsViewState extends State<SHButtonsView> {
                 });
               },
             ),
-            SHText("Tonal"),
+            MyText("Tonal"),
             Checkbox(
               value: isTonal,
               onChanged: (val) {

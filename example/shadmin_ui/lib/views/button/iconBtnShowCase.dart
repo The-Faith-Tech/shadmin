@@ -19,38 +19,38 @@ class IconBtnShowCase extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SHText("${khs6.toInt()}"),
-            SHIconBtn(
+            MyText("${khs6.toInt()}"),
+            MyIconBtn(
               icon: icon,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isOutlined: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isTonal: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isTonal: true,
               isOutlined: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isFilled: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isDisabled: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isLoading: true,
               onPressed: () {},
@@ -61,44 +61,44 @@ class IconBtnShowCase extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SHText("${khs5.toInt()}"),
-            SHIconBtn(
+            MyText("${khs5.toInt()}"),
+            MyIconBtn(
               icon: icon,
               onPressed: () {},
               isMedium: true,
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isOutlined: true,
               onPressed: () {},
               isMedium: true,
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isTonal: true,
               isMedium: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isTonal: true,
               isOutlined: true,
               onPressed: () {},
               isMedium: true,
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isFilled: true,
               isMedium: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isDisabled: true,
               isMedium: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isLoading: true,
               isMedium: true,
@@ -110,44 +110,44 @@ class IconBtnShowCase extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SHText("${khs4.toInt()}"),
-            SHIconBtn(
+            MyText("${khs4.toInt()}"),
+            MyIconBtn(
               icon: icon,
               onPressed: () {},
               isSmall: true,
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isOutlined: true,
               onPressed: () {},
               isSmall: true,
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isTonal: true,
               isSmall: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isTonal: true,
               isOutlined: true,
               isSmall: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isFilled: true,
               isSmall: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isDisabled: true,
               isSmall: true,
               onPressed: () {},
             ),
-            SHIconBtn(
+            MyIconBtn(
               icon: icon,
               isLoading: true,
               isSmall: true,
@@ -161,44 +161,44 @@ class IconBtnShowCase extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SHText("${e.toInt()}"),
-                    SHIconBtn(
+                    MyText("${e.toInt()}"),
+                    MyIconBtn(
                       icon: icon,
                       onPressed: () {},
                       size: e,
                     ),
-                    SHIconBtn(
+                    MyIconBtn(
                       icon: icon,
                       isOutlined: true,
                       onPressed: () {},
                       size: e,
                     ),
-                    SHIconBtn(
+                    MyIconBtn(
                       icon: icon,
                       isTonal: true,
                       size: e,
                       onPressed: () {},
                     ),
-                    SHIconBtn(
+                    MyIconBtn(
                       icon: icon,
                       isTonal: true,
                       isOutlined: true,
                       size: e,
                       onPressed: () {},
                     ),
-                    SHIconBtn(
+                    MyIconBtn(
                       icon: icon,
                       isFilled: true,
                       size: e,
                       onPressed: () {},
                     ),
-                    SHIconBtn(
+                    MyIconBtn(
                       icon: icon,
                       isDisabled: true,
                       size: e,
                       onPressed: () {},
                     ),
-                    SHIconBtn(
+                    MyIconBtn(
                       icon: icon,
                       isLoading: true,
                       size: e,

@@ -25,7 +25,7 @@ class SHDivider extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: khs2),
-                child: SHText(
+                child: MyText(
                   text!,
                   color: color,
                 ),

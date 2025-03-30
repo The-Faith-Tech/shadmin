@@ -1,10 +1,10 @@
 name: shadmin
 description: "A new Flutter package project."
-version: 0.0.1
+version: 0.1.1
 homepage: "https://github.com/The-Faith-tech/shadmin"
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ">=3.4.3 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:

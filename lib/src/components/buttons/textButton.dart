@@ -8,8 +8,8 @@ abstract class _TextBtn {
   ButtonStyle txtBtnStyle(BuildContext context);
 }
 
-class SHTextBtn extends StatelessWidget implements _TextBtn {
-  const SHTextBtn({
+class MyTextBtn extends StatelessWidget implements _TextBtn {
+  const MyTextBtn({
     super.key,
     required this.label,
     required this.onPressed,
@@ -54,7 +54,7 @@ class SHTextBtn extends StatelessWidget implements _TextBtn {
                           ? Colors.grey.shade600
                           : color ?? context.primaryColor,
                     ),
-                    label: SHText(
+                    label: MyText(
                       label,
                       color: isDisabled
                           ? Colors.grey.shade600
@@ -66,13 +66,13 @@ class SHTextBtn extends StatelessWidget implements _TextBtn {
                     onPressed: isDisabled ? null : onPressed,
                     style: txtBtnStyle(context),
                     icon: Icon(icon),
-                    label: SHText(label),
+                    label: MyText(label),
                   )
             : isTonal
                 ? FilledButton.tonal(
                     onPressed: isDisabled ? null : onPressed,
                     style: txtBtnStyle(context),
-                    child: SHText(
+                    child: MyText(
                       label,
                       color: isDisabled
                           ? Colors.grey.shade600
@@ -82,7 +82,7 @@ class SHTextBtn extends StatelessWidget implements _TextBtn {
                 : TextButton(
                     onPressed: isDisabled ? null : onPressed,
                     style: txtBtnStyle(context),
-                    child: SHText(label),
+                    child: MyText(label),
                   );
   }
 

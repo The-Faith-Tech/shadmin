@@ -7,8 +7,8 @@ abstract class _IconBtn {
   double iconSize();
 }
 
-class SHIconBtn extends StatelessWidget implements _IconBtn {
-  const SHIconBtn({
+class MyIconBtn extends StatelessWidget implements _IconBtn {
+  const MyIconBtn({
     super.key,
     required this.icon,
     this.color,

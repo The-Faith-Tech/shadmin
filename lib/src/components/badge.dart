@@ -92,7 +92,7 @@ class SHBadge extends StatelessWidget {
         ),
         child: FittedBox(
           fit: BoxFit.scaleDown,
-          child: SHText(
+          child: MyText(
             label,
             isSemiBold: true,
             isBold: isBold,
