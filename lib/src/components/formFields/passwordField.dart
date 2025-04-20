@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 import '../../../shadmin.dart';
 
@@ -13,7 +12,8 @@ class SHPasswordField extends StatefulWidget {
     this.errorMessage = "",
     this.textInputAction = TextInputAction.done,
     this.prefixIcon,
-    this.floatingLabel = false, this.validator,
+    this.floatingLabel = false,
+    this.validator,
   });
 
   final String? label;
@@ -24,7 +24,6 @@ class SHPasswordField extends StatefulWidget {
   final IconData? prefixIcon;
   final bool floatingLabel;
   final String? Function(String?)? validator;
-
 
   @override
   State<SHPasswordField> createState() => _PasswordFieldState();

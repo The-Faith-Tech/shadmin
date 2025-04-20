@@ -5,6 +5,10 @@ extension ThemeExtension on BuildContext {
     return Theme.of(this).brightness == Brightness.dark;
   }
 
+  ColorScheme get colorScheme {
+    return Theme.of(this).colorScheme;
+  }
+
   Color get primaryColor {
     return Theme.of(this).colorScheme.primary;
   }
@@ -21,7 +25,19 @@ extension ThemeExtension on BuildContext {
     return MediaQuery.of(this).size.height;
   }
 
+  Color get errorColor {
+    return Theme.of(this).colorScheme.error;
+  }
+
+  Color get onErrorColor {
+    return Theme.of(this).colorScheme.onError;
+  }
+
   double get width {
     return MediaQuery.of(this).size.width;
+  }
+
+  ThemeData get theme {
+    return Theme.of(this);
   }
 }

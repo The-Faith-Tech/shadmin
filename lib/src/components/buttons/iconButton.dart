@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../extension/extension.dart';
 import '../../shared/shared.dart';
-import '../../utils/utils.dart';
 
 abstract class _IconBtn {
   double iconSize();

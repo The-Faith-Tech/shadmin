@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shared/spacing.dart';
-import '../../utils/themeExtensions.dart';
+import '../../extension/themeExtension.dart';
 import '../../components/text.dart';
 
 class SHDivider extends StatelessWidget {

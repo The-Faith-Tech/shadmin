@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 import '../../shadmin.dart';
 
@@ -87,7 +86,7 @@ class SHBadge extends StatelessWidget {
         padding:
             padding ?? EdgeInsets.symmetric(horizontal: ks3.w, vertical: ks1.h),
         decoration: BoxDecoration(
-          color: bgColor ?? context.theme.primaryColor.withOpacity(0.1),
+          color: bgColor ?? context.colorScheme.onPrimary,
           borderRadius: borderRadius ?? BorderRadius.circular(radius ?? 4.r),
         ),
         child: FittedBox(

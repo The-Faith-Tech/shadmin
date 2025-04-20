@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../components/text.dart';
 import '../../shared/shared.dart';
-import '../../utils/themeExtensions.dart';
+import '../../extension/themeExtension.dart';
 import 'sidebarItem.dart';
 
 class SHSiderbarMenuTile extends StatefulWidget {

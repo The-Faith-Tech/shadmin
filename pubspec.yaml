@@ -1,6 +1,6 @@
 name: shadmin
 description: "A new Flutter package project."
-version: 0.1.1
+version: 0.1.2
 homepage: "https://github.com/The-Faith-tech/shadmin"
 
 environment:
@@ -14,7 +14,6 @@ dependencies:
   flutter_screenutil: ^5.9.3
   lottie: ^3.1.2
   dotted_border: ^2.1.0
-  get: ^4.6.6
   cached_network_image: ^3.4.1
 
 dev_dependencies:

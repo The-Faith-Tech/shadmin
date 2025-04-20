@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../extension/extension.dart';
 import '../../shared/shared.dart';
-import '../../utils/utils.dart';
 import '../text.dart';
 
 abstract class _TextBtn {
