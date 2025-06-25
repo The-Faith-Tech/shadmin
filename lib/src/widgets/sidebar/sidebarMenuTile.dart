@@ -57,7 +57,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
               children: [
                 Material(
                   color: (isSelected && !widget.iconOnly)
-                      ? context.primaryColor.withOpacity(0.2)
+                      ? context.primaryColor.withAlpha(20)
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(kr15),
                   child: InkWell(
@@ -73,7 +73,7 @@ class _SHSiderbarMenuTileState extends State<SHSiderbarMenuTile> {
                         color: Colors.transparent,
                         border: (isSelected && !widget.iconOnly)
                             ? Border.all(
-                                color: context.primaryColor.withOpacity(0.5))
+                                color: context.primaryColor.withAlpha(50))
                             : null,
                       ),
                       padding: widget.iconOnly

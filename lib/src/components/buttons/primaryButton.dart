@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../shadmin.dart';
-import '../../extension/extension.dart';
 
 abstract class _PrimaryBtn {
   ButtonStyle elevatedBtnStyle(BuildContext context);

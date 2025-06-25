@@ -6,10 +6,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [MyText("HomeView")],
-      ),
+    return Column(
+      children: [MyText("HomeView")],
     );
   }
 }
