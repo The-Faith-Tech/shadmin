@@ -7,7 +7,6 @@ class SHDottedContainer extends StatelessWidget {
     required this.child,
     this.color = Colors.black,
     this.strokeWidth = 1,
-    this.borderType = BorderType.Rect,
     this.dashPattern = const <double>[3, 1],
     this.padding = const EdgeInsets.all(2),
     this.borderPadding = EdgeInsets.zero,
@@ -22,7 +21,6 @@ class SHDottedContainer extends StatelessWidget {
   final double strokeWidth;
   final Color color;
   final List<double> dashPattern;
-  final BorderType borderType;
   final Radius radius;
   final StrokeCap strokeCap;
   final PathBuilder? customPath;
@@ -30,16 +28,15 @@ class SHDottedContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DottedBorder(
-      padding: padding,
-      borderPadding: borderPadding,
-      strokeWidth: strokeWidth,
-      color: color,
-      dashPattern: dashPattern,
-      borderType: borderType,
-      radius: radius,
-      strokeCap: strokeCap,
-      customPath: customPath,
-      stackFit: stackFit,
+      options: RectDottedBorderOptions(
+        borderPadding: borderPadding,
+        strokeWidth: strokeWidth,
+        color: color,
+        dashPattern: dashPattern,
+        strokeCap: strokeCap,
+        padding: padding,
+        stackFit: stackFit,
+      ),
       child: child,
     );
   }
